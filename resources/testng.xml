@@ -3,7 +3,7 @@
 <suite name="NopCommerce Automation Testing" verbose="1">
     <test name="Run on Chrome browser">
         <classes>
-            <class name="com.nopcommerce.users.User_01_Register_Login"/>
+            <class name="com.nopcommerce.users.Level_01_Repeat_Yourself"/>
         </classes>
     </test>
 </suite>
