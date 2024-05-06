@@ -1,5 +1,6 @@
 package com.nopcommerce.users;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,8 +32,8 @@ public class Level_01_Repeat_Yourself {
         driver.findElement(By.cssSelector("a.ico-register")).click();
 
         //Đăng ký 1 tài khoản
-        driver.findElement(By.cssSelector("input#gender-male")).click();
         driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Jasmine");
+        driver.findElement(By.cssSelector("input#gender-male")).click();
         driver.findElement(By.cssSelector("input#LastName")).sendKeys("Tran");
         new Select(driver.findElement(By.cssSelector("select[name='DateOfBirthDay']"))).selectByVisibleText("10");
         new Select(driver.findElement(By.cssSelector("select[name='DateOfBirthMonth']"))).selectByVisibleText("May");

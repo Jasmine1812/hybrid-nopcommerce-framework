@@ -1,4 +1,4 @@
 package utilities;
 
-public class ExcelConfig {
+public class ExcelConfig  {
 }
