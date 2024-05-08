@@ -41,7 +41,7 @@ public class Topic_01_Keywords {
     protected String city = "Hà Nội";
     //Chỉ trong class này dùng được
     private String phone = "01233";
-    //Chỉ dùng được trong cùng package
+    //Chỉ dùng được trong cùng package //Default
     String zipCode = "65000";
 
     WebDriver driver;
