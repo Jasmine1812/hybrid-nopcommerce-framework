@@ -38,17 +38,17 @@ public class Level_03_Page_Object {
         homePage.clickRegisterLink();
         registerPage = new RegisterPageObject();
         registerPage.clickToGenderMaleRadio();
-        registerPage.enterToFirstNameTextbox();
-        registerPage.enterToLastNameTextbox();
-        registerPage.selectDayDropdown();
-        registerPage.selectMonthDropdown();
-        registerPage.selectYearDropdown();
-        registerPage.enterToMailTextbox();
-        registerPage.enterToCompanyNameTextbox();
-        registerPage.enterToPasswordTextbox();
-        registerPage.enterToConfirmPasswordTextbox();
+        registerPage.enterToFirstNameTextbox("");
+        registerPage.enterToLastNameTextbox("");
+        registerPage.selectDayDropdown("");
+        registerPage.selectMonthDropdown("");
+        registerPage.selectYearDropdown("");
+        registerPage.enterToMailTextbox("");
+        registerPage.enterToCompanyNameTextbox("");
+        registerPage.enterToPasswordTextbox("");
+        registerPage.enterToConfirmPasswordTextbox("");
         registerPage.clickToRegisterButton();
-        Assert.assertTrue(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+        Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
         registerPage.clickToLogoutLink();
     }
 
@@ -57,8 +57,8 @@ public class Level_03_Page_Object {
         homePage = new HomePageObject();
         homePage.clickToLoginButton();
         loginPage = new LoginPageObject();
-        loginPage.enterToEmailTextbox();
-        loginPage.enterToPasswordTextbox();
+        loginPage.enterToEmailTextbox("");
+        loginPage.enterToPasswordTextbox("");
         loginPage.clickToLoginButton();
         homePage = new HomePageObject();
         Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
@@ -69,13 +69,13 @@ public class Level_03_Page_Object {
         homePage.clickToMyAccountLink();
         customerInfoPage = new CustomerInfoPageObject();
         Assert.assertTrue(customerInfoPage.isMaleDisplayed());
-        Assert.assertEquals(customerInfoPage.getFirstNameTextboxValue, "");
-        Assert.assertEquals(customerInfoPage.getLastNameTextboxValue, "");
-        Assert.assertEquals(customerInfoPage.getDayDropdownSelectedValue, "");
-        Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedValue, "");
-        Assert.assertEquals(customerInfoPage.getYearDropdownSelectedValue, "");
-        Assert.assertEquals(customerInfoPage.getEmailTextboxValue, "");
-        Assert.assertEquals(customerInfoPage.getCompanyTextboxValue, "");
+        Assert.assertEquals(customerInfoPage.getFirstNameTextboxValue(), "");
+        Assert.assertEquals(customerInfoPage.getLastNameTextboxValue(), "");
+        Assert.assertEquals(customerInfoPage.getDayDropdownSelectedValue(), "");
+        Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedValue(), "");
+        Assert.assertEquals(customerInfoPage.getYearDropdownSelectedValue(), "");
+        Assert.assertEquals(customerInfoPage.getEmailTextboxValue(), "");
+        Assert.assertEquals(customerInfoPage.getCompanyTextboxValue(), "");
 
     }
 
