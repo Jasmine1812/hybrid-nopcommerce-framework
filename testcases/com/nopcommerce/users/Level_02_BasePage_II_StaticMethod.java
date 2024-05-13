@@ -2,10 +2,8 @@ package com.nopcommerce.users;
 
 
 import commons.BasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.Random;
 
-public class Level_02_BasePage_I_Initial {
+public class Level_02_BasePage_II_StaticMethod {
 
     WebDriver driver;
     BasePage basePage;
@@ -22,7 +20,7 @@ public class Level_02_BasePage_I_Initial {
     @BeforeClass
     public void beforeClass() {
         driver = new ChromeDriver();
-        basePage = new BasePage();
+        basePage = BasePage.getBasePage();
         driver.get("https://demo.nopcommerce.com/");        ;
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();

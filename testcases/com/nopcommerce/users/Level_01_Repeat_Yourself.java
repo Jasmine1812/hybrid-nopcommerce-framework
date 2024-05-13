@@ -62,7 +62,7 @@ public class Level_01_Repeat_Yourself {
     public void TC_02_Login() {
 
         driver.findElement(By.cssSelector("a.ico-login")).click();
-        driver.findElement(By.cssSelector("input#Email")).sendKeys("james80881@gmail.com");
+        driver.findElement(By.cssSelector("input#Email")).sendKeys("james59547@gmail.com");
         driver.findElement(By.cssSelector("input#Password")).sendKeys("abcde12345-");
         driver.findElement(By.cssSelector("button.login-button")).click();
         Assert.assertTrue(driver.findElement(By.cssSelector("a.ico-account")).isDisplayed());
@@ -78,7 +78,7 @@ public class Level_01_Repeat_Yourself {
         Assert.assertEquals(new Select(driver.findElement(By.cssSelector("select[name='DateOfBirthDay']"))).getFirstSelectedOption().getText(),"10");
         Assert.assertEquals(new Select(driver.findElement(By.cssSelector("select[name='DateOfBirthMonth']"))).getFirstSelectedOption().getText(),"May");
         Assert.assertEquals(new Select(driver.findElement(By.cssSelector("select[name='DateOfBirthYear']"))).getFirstSelectedOption().getText(),"1999");
-        Assert.assertEquals(driver.findElement(By.cssSelector("input#Email")).getAttribute("value"),"james80881@gmail.com");
+        Assert.assertEquals(driver.findElement(By.cssSelector("input#Email")).getAttribute("value"),"james59547@gmail.com");
         Assert.assertEquals(driver.findElement(By.cssSelector("input#Company")).getAttribute("value"),"NEXTG");
 
     }
