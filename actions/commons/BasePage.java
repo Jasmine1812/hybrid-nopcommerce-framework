@@ -17,6 +17,7 @@ import java.util.Set;
 
 public class BasePage {
 
+
     public static BasePage getBasePage(){
         return new  BasePage();
     }
@@ -225,6 +226,10 @@ public class BasePage {
         new Actions(driver).clickAndHold(getElement(driver, locator)).perform();
     }
 
+    public void releaseLeftMouse(WebDriver driver){
+        new Actions(driver).release();
+    }
+
     public void rightClick(WebDriver driver, String locator) {
         new Actions(driver).contextClick(getElement(driver, locator)).perform();
     }
@@ -326,6 +331,7 @@ public class BasePage {
     public void waitForElementSelected(WebDriver driver, String locator){
         new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeSelected(getByXpath(locator)));
     }
+
 
     public void waitForElementClickable(WebDriver driver, String locator){
         new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
