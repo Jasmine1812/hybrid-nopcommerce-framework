@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Locale;
 import java.util.Random;
 
 public class BaseTest {
@@ -15,14 +16,15 @@ public class BaseTest {
     private WebDriver driver;
 
     protected WebDriver getBrowserDriver(String browserName){
-        switch (browserName) {
-            case "firefox":
+        BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+        switch (browserList) {
+            case FIREFOX:
                 driver = new FirefoxDriver();
                 break;
-            case "chrome":
+            case CHROME:
                 driver = new ChromeDriver();
                 break;
-            case "edge":
+            case EDGE:
                 driver = new EdgeDriver();
                 break;
             default:
