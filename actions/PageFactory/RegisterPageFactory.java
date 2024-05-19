@@ -2,6 +2,7 @@ package PageFactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -18,17 +19,20 @@ public class RegisterPageFactory extends BasePageFactory {
 
     @FindBy(how = How.ID, using = "gender-male")
     private WebElement genderMaleRadio;
-
-    @FindBy(how = How.ID, using = "FirstName")
+    @CacheLookup
+    @FindBy(id = "FirstName")
     private WebElement firstNameTextbox;
 
-    @FindBy(how = How.ID, using = "LastName")
+    @CacheLookup
+    @FindBy(id = "LastName")
     private WebElement lastNameTextbox;
 
-    @FindBy(how = How.NAME, using = "DateOfBirthDay")
+    @CacheLookup
+    @FindBy(name = "DateOfBirthDay")
     private WebElement dayDropdown;
 
-    @FindBy(how = How.NAME, using = "DateOfBirthMonth")
+    @CacheLookup
+    @FindBy(name = "DateOfBirthMonth")
     private WebElement monthDropdown;
 
     @FindBy(how = How.NAME, using = "DateOfBirthYear")
@@ -49,12 +53,11 @@ public class RegisterPageFactory extends BasePageFactory {
     @FindBy(how = How.ID, using = "register-button")
     private WebElement registerButton;
 
-    @FindBy(how = How.CLASS_NAME, using = "ico-logout")
+    @FindBy(className = "ico-logout")
     private WebElement logoutLink;
 
-    @FindBy(how = How.CLASS_NAME, using = "result")
+    @FindBy(className = "result")
     private WebElement registerSuccessMessage;
-
 
 
     public void clickToGenderMaleRadio() {
@@ -74,17 +77,17 @@ public class RegisterPageFactory extends BasePageFactory {
 
     public void selectDayDropdown(String day) {
         waitForElementClickable(driver, dayDropdown);
-        selectItemInDropdown(driver,dayDropdown, day);
+        selectItemInDropdown(driver, dayDropdown, day);
     }
 
     public void selectMonthDropdown(String month) {
-        waitForElementClickable(driver,monthDropdown);
-        selectItemInDropdown(driver,monthDropdown, month);
+        waitForElementClickable(driver, monthDropdown);
+        selectItemInDropdown(driver, monthDropdown, month);
     }
 
     public void selectYearDropdown(String year) {
-        waitForElementClickable(driver,yearDropdown);
-        selectItemInDropdown(driver,yearDropdown, year);
+        waitForElementClickable(driver, yearDropdown);
+        selectItemInDropdown(driver, yearDropdown, year);
     }
 
     public void enterToMailTextbox(String email) {

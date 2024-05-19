@@ -17,13 +17,13 @@ public class LoginPageFactory extends BasePageFactory {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(how = How.XPATH, using = "//input[@class='email']")
+    @FindBy(xpath = "//input[@class='email']")
     private WebElement emailTextbox;
 
-    @FindBy(how = How.XPATH, using = "//input[@class='password']")
+    @FindBy(xpath = "//input[@class='password']")
     private WebElement passwordTextbox;
 
-    @FindBy(how = How.XPATH, using = "//button[@class='button-1 login-button']")
+    @FindBy(xpath = "//button[@class='button-1 login-button']")
     private WebElement loginButton;
 
     public void enterToEmailTextbox(String email) {
