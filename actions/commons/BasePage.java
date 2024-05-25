@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import pageObjects.*;
+import pageUIs.BasePageUI;
 
 import java.time.Duration;
 import java.util.List;
@@ -340,6 +342,54 @@ public class BasePage {
 
     public void waitForElementInvisible(WebDriver driver, String locator){
         new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+    }
+
+    public AddressPageObject OpenAddressPage(WebDriver driver){
+        waitForElementVisible(driver, BasePageUI.ADDRESSES_LINK);
+        clickToElement(driver, BasePageUI.ADDRESSES_LINK);
+        return new AddressPageObject(driver);
+    }
+
+    public OrdersPageObject OpenOrdersPage(WebDriver driver){
+        waitForElementVisible(driver, BasePageUI.ORDERS_LINK);
+        clickToElement(driver, BasePageUI.ORDERS_LINK);
+        return new OrdersPageObject(driver);
+    }
+
+    public DownloadablePageObject OpenDownloadPage(WebDriver driver){
+        waitForElementVisible(driver, BasePageUI.DOWNLOADABLE_PRODUCTS_LINK);
+        clickToElement(driver, BasePageUI.DOWNLOADABLE_PRODUCTS_LINK);
+        return new DownloadablePageObject(driver);
+    }
+
+    public BackInStockPageObject OpenBackInStockPage(WebDriver driver){
+        waitForElementVisible(driver, BasePageUI.BACK_IN_STOCK_LINK);
+        clickToElement(driver, BasePageUI.BACK_IN_STOCK_LINK);
+        return new BackInStockPageObject(driver);
+    }
+
+    public RewardPointsPageObject OpenRewardPointsPage(WebDriver driver){
+        waitForElementVisible(driver, BasePageUI.REWARD_POINTS_LINK);
+        clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
+        return new RewardPointsPageObject(driver);
+    }
+
+    public ChangePasswordPageObject OpenChangePasswordPage(WebDriver driver){
+        waitForElementVisible(driver, BasePageUI.CHANGE_PASSWORD_LINK);
+        clickToElement(driver, BasePageUI.CHANGE_PASSWORD_LINK);
+        return new ChangePasswordPageObject(driver);
+    }
+
+    public MyProductReviewPageObject OpenMyProductReviewPage(WebDriver driver){
+        waitForElementVisible(driver, BasePageUI.MY_PRODUCT_REVIEW_LINK);
+        clickToElement(driver, BasePageUI.MY_PRODUCT_REVIEW_LINK);
+        return new MyProductReviewPageObject(driver);
+    }
+
+    public CustomerInfoPageObject OpenCustomerInforPage(WebDriver driver){
+        waitForElementVisible(driver, BasePageUI.CUSTOMER_INFOR_LINK);
+        clickToElement(driver, BasePageUI.CUSTOMER_INFOR_LINK);
+        return new CustomerInfoPageObject(driver);
     }
 
 
