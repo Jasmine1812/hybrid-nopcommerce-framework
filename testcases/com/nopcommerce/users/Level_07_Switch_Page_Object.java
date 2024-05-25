@@ -76,14 +76,14 @@ public class Level_07_Switch_Page_Object extends BaseTest {
 
     @Test
     public void TC_04_Switch_Page() {
-        addressPage = customerInfoPage.OpenAddressPage(driver);
-        ordersPage = addressPage.OpenOrdersPage(driver);
-        downloadablePage = ordersPage.OpenDownloadPage(driver);
-        backInStockPage = downloadablePage.OpenBackInStockPage(driver);
-        rewardPointsPage = backInStockPage.OpenRewardPointsPage(driver);
-        changePasswordPage = rewardPointsPage.OpenChangePasswordPage(driver);
-        myProductReviewPage = changePasswordPage.OpenMyProductReviewPage(driver);
-        customerInfoPage = myProductReviewPage.OpenCustomerInforPage(driver);
+        addressPage = customerInfoPage.openAddressPage(driver);
+        ordersPage = addressPage.openOrdersPage(driver);
+        downloadablePage = ordersPage.openDownloadPage(driver);
+        backInStockPage = downloadablePage.openBackInStockPage(driver);
+        rewardPointsPage = backInStockPage.openRewardPointsPage(driver);
+        changePasswordPage = rewardPointsPage.openChangePasswordPage(driver);
+        myProductReviewPage = changePasswordPage.openMyProductReviewPage(driver);
+        customerInfoPage = myProductReviewPage.openCustomerInforPage(driver);
 
     }
 
