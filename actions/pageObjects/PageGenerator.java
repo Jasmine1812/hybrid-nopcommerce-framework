@@ -1,11 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
-import pageObjects.CustomerInfoPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
-import pageUIs.BasePageUI;
+import pageObjects.sidebar.*;
 
 public class PageGenerator {
     public static HomePageObject getHomePageObject(WebDriver driver){

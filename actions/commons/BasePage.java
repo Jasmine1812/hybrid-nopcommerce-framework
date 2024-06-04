@@ -1,7 +1,6 @@
 package commons;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.devtools.v85.page.Page;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -9,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.*;
+import pageObjects.sidebar.*;
 import pageUIs.BasePageUI;
 
 import java.time.Duration;
@@ -18,8 +18,8 @@ import java.util.Set;
 public class BasePage {
 
 
-    public static BasePage getBasePage(){
-        return new  BasePage();
+    public static BasePage getBasePage() {
+        return new BasePage();
     }
 
     public void openPageUrl(WebDriver driver, String url) {
@@ -122,7 +122,7 @@ public class BasePage {
     }
 
     public void sendkeyToElement(WebDriver driver, String locator, String keysToSend) {
-        getElement(driver,locator).clear();
+        getElement(driver, locator).clear();
         getElement(driver, locator).sendKeys(keysToSend);
     }
 
@@ -227,7 +227,7 @@ public class BasePage {
         new Actions(driver).clickAndHold(getElement(driver, locator)).perform();
     }
 
-    public void releaseLeftMouse(WebDriver driver){
+    public void releaseLeftMouse(WebDriver driver) {
         new Actions(driver).release();
     }
 
@@ -279,7 +279,7 @@ public class BasePage {
     }
 
     public boolean checkImageLoaded(WebDriver driver, String locator) {
-        return  (boolean) ((JavascriptExecutor) driver).executeScript(
+        return (boolean) ((JavascriptExecutor) driver).executeScript(
                 "return arguments[0].complete && typeof arguments[0].naturalWidth != 'undefined' && arguments[0].naturalWidth > 0", getElement(driver, locator));
     }
 
@@ -289,7 +289,7 @@ public class BasePage {
     }
 
     public String getElementValidationMessage(WebDriver driver, String locator) {
-        return (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].validationMessage;", getElement(driver,locator));
+        return (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].validationMessage;", getElement(driver, locator));
     }
 
     public boolean waitToJQueryAndJSLoadedSuccess(WebDriver driver) {
@@ -310,86 +310,86 @@ public class BasePage {
     }
 
     public void checkCheckboxByJS(WebDriver driver, String locator) {
-        if (!getElement(driver, locator).isSelected()){
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();",getElement(driver, locator));
+        if (!getElement(driver, locator).isSelected()) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", getElement(driver, locator));
         }
     }
 
     public void uncheckCheckboxByJS(WebDriver driver, String locator) {
-        if (getElement(driver, locator).isSelected()){
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();",getElement(driver, locator));
+        if (getElement(driver, locator).isSelected()) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", getElement(driver, locator));
         }
     }
 
-    public void waitForElementVisible(WebDriver driver, String locator){
-        new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
+    public void waitForElementVisible(WebDriver driver, String locator) {
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
     }
 
-    public void waitForElementPresence(WebDriver driver, String locator){
-        new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(getByXpath(locator)));
+    public void waitForElementPresence(WebDriver driver, String locator) {
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(getByXpath(locator)));
     }
 
-    public void waitForElementSelected(WebDriver driver, String locator){
-        new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeSelected(getByXpath(locator)));
+    public void waitForElementSelected(WebDriver driver, String locator) {
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeSelected(getByXpath(locator)));
     }
 
 
-    public void waitForElementClickable(WebDriver driver, String locator){
-        new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
+    public void waitForElementClickable(WebDriver driver, String locator) {
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
     }
 
-    public void waitForElementInvisible(WebDriver driver, String locator){
-        new WebDriverWait(driver,Duration.ofSeconds(30)).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+    public void waitForElementInvisible(WebDriver driver, String locator) {
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
     }
 
-    public AddressPageObject openAddressPage(WebDriver driver){
+    // only user with Level_07_Switch_Page_Object
+    public AddressPageObject openAddressPage(WebDriver driver) {
         waitForElementVisible(driver, BasePageUI.ADDRESSES_LINK);
         clickToElement(driver, BasePageUI.ADDRESSES_LINK);
         return PageGenerator.getAddressPage(driver);
     }
 
-    public OrdersPageObject openOrdersPage(WebDriver driver){
+    public OrdersPageObject openOrdersPage(WebDriver driver) {
         waitForElementVisible(driver, BasePageUI.ORDERS_LINK);
         clickToElement(driver, BasePageUI.ORDERS_LINK);
         return PageGenerator.getOrdersPage(driver);
     }
 
-    public DownloadablePageObject openDownloadPage(WebDriver driver){
+    public DownloadablePageObject openDownloadPage(WebDriver driver) {
         waitForElementVisible(driver, BasePageUI.DOWNLOADABLE_PRODUCTS_LINK);
         clickToElement(driver, BasePageUI.DOWNLOADABLE_PRODUCTS_LINK);
         return PageGenerator.getDownloadPage(driver);
     }
 
-    public BackInStockPageObject openBackInStockPage(WebDriver driver){
+    public BackInStockPageObject openBackInStockPage(WebDriver driver) {
         waitForElementVisible(driver, BasePageUI.BACK_IN_STOCK_LINK);
         clickToElement(driver, BasePageUI.BACK_IN_STOCK_LINK);
         return PageGenerator.getBackInStockPage(driver);
     }
 
-    public RewardPointsPageObject openRewardPointsPage(WebDriver driver){
+    public RewardPointsPageObject openRewardPointsPage(WebDriver driver) {
         waitForElementVisible(driver, BasePageUI.REWARD_POINTS_LINK);
         clickToElement(driver, BasePageUI.REWARD_POINTS_LINK);
         return PageGenerator.getRewardPointsPage(driver);
     }
 
-    public ChangePasswordPageObject openChangePasswordPage(WebDriver driver){
+    public ChangePasswordPageObject openChangePasswordPage(WebDriver driver) {
         waitForElementVisible(driver, BasePageUI.CHANGE_PASSWORD_LINK);
         clickToElement(driver, BasePageUI.CHANGE_PASSWORD_LINK);
         return PageGenerator.getChangePasswordPage(driver);
     }
 
-    public MyProductReviewPageObject openMyProductReviewPage(WebDriver driver){
+    public MyProductReviewPageObject openMyProductReviewPage(WebDriver driver) {
         waitForElementVisible(driver, BasePageUI.MY_PRODUCT_REVIEW_LINK);
         clickToElement(driver, BasePageUI.MY_PRODUCT_REVIEW_LINK);
         return PageGenerator.getMyProductReviewPage(driver);
     }
 
-    public CustomerInfoPageObject openCustomerInforPage(WebDriver driver){
+    public CustomerInfoPageObject openCustomerInforPage(WebDriver driver) {
         waitForElementVisible(driver, BasePageUI.CUSTOMER_INFOR_LINK);
         clickToElement(driver, BasePageUI.CUSTOMER_INFOR_LINK);
         return PageGenerator.getCustomerInfoPageObject(driver);
     }
-
 
 
 }

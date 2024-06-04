@@ -3,41 +3,31 @@ package com.nopcommerce.users;
 
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.sidebar.CustomerInfoPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.*;
+import pageObjects.sidebar.*;
 
 import java.time.Duration;
 
-public class Level_03_Page_Object extends BaseTest {
-
-    private WebDriver driver;
-    private HomePageObject homePage;
-    private LoginPageObject loginPage;
-    private CustomerInfoPageObject customerInfoPage;
-    private RegisterPageObject registerPage;
-
-    private String firstName, lastName, day, month, year, email, company, password, confirmPassword;
+public class Level_08_Page_Navigation extends BaseTest {
 
 
+    @Parameters("browser")
     @BeforeClass
-    public void beforeClass() {
-        driver = new ChromeDriver();
-        driver.get("https://demo.nopcommerce.com/");
-        driver.manage().window().maximize();
+    public void beforeClass(String browserName) {
+        driver = getBrowserDriver(browserName);
+        homePage = PageGenerator.getHomePageObject(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         firstName = "Tran";
         lastName = "Thi";
         day = "10";
         month = "May";
         year = "1994";
-        email = "jasmine"+ generateRandomNumber() + "@gmail.com";
+        email = "jasmine" + generateRandomNumber() + "@gmail.com";
         company = "NEXTG";
         password = "abcde12345-";
         confirmPassword = "abcde12345-";
@@ -45,9 +35,8 @@ public class Level_03_Page_Object extends BaseTest {
 
     @Test
     public void TC_01_Register() {
-        homePage = new HomePageObject(driver);
-        homePage.clickRegisterLink();
-        registerPage = new RegisterPageObject(driver);
+
+        registerPage = homePage.clickRegisterLink();
         registerPage.clickToGenderMaleRadio();
         registerPage.enterToFirstNameTextbox(firstName);
         registerPage.enterToLastNameTextbox(lastName);
@@ -60,25 +49,21 @@ public class Level_03_Page_Object extends BaseTest {
         registerPage.enterToConfirmPasswordTextbox(confirmPassword);
         registerPage.clickToRegisterButton();
         Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
-        registerPage.clickToLogoutLink();
+        homePage = registerPage.clickToLogoutLink();
     }
 
     @Test
     public void TC_02_Login() {
-        homePage = new HomePageObject(driver);
-        homePage.clickToLoginLink();
-        loginPage = new LoginPageObject(driver);
+        loginPage = homePage.clickToLoginLink();
         loginPage.enterToEmailTextbox(email);
         loginPage.enterToPasswordTextbox(password);
-        loginPage.clickToLoginButton();
-        homePage = new HomePageObject(driver);
+        homePage = loginPage.clickToLoginButton();
         Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
     }
 
     @Test
     public void TC_03_MyAccount() {
-        homePage.clickToMyAccountLink();
-        customerInfoPage = new CustomerInfoPageObject(driver);
+        customerInfoPage = homePage.clickToMyAccountLink();
         Assert.assertTrue(customerInfoPage.isMaleDisplayed());
         Assert.assertEquals(customerInfoPage.getFirstNameTextboxValue(), firstName);
         Assert.assertEquals(customerInfoPage.getLastNameTextboxValue(), lastName);
@@ -90,9 +75,40 @@ public class Level_03_Page_Object extends BaseTest {
 
     }
 
+    @Test
+    public void TC_04_Switch_Page() {
+        addressPage = customerInfoPage.openAddressPage();
+        ordersPage = addressPage.openOrdersPage();
+        downloadablePage = ordersPage.openDownloadPage();
+        backInStockPage = downloadablePage.openBackInStockPage();
+        rewardPointsPage = backInStockPage.openRewardPointsPage();
+        changePasswordPage = rewardPointsPage.openChangePasswordPage();
+        myProductReviewPage = changePasswordPage.openMyProductReviewPage();
+        customerInfoPage = myProductReviewPage.openCustomerInforPage();
+
+    }
+
 
     @AfterClass
     public void afterClass() {
         driver.quit();
     }
+
+    private WebDriver driver;
+    private HomePageObject homePage;
+    private LoginPageObject loginPage;
+    private CustomerInfoPageObject customerInfoPage;
+    private RegisterPageObject registerPage;
+
+    private AddressPageObject addressPage;
+    private BackInStockPageObject backInStockPage;
+    private ChangePasswordPageObject changePasswordPage;
+    private DownloadablePageObject downloadablePage;
+    private MyProductReviewPageObject myProductReviewPage;
+    private OrdersPageObject ordersPage;
+    private RewardPointsPageObject rewardPointsPage;
+
+    private String firstName, lastName, day, month, year, email, company, password, confirmPassword;
+
+
 }
