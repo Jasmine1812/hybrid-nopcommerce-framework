@@ -1,10 +1,7 @@
-package pageObjects.sidebar;
+package pageObjects.user.sidebar;
 
-import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageObjects.SidebarPageObject;
-import pageUIs.HomePageUI;
-import pageUIs.SidebarPageUI;
+import pageObjects.user.SidebarPageObject;
 
 public class AddressPageObject extends SidebarPageObject {
     private WebDriver driver;

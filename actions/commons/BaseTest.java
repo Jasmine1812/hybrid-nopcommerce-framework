@@ -4,18 +4,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestNGListener;
+import org.testng.ITestNGMethod;
 
 import java.util.Locale;
 import java.util.Random;
 
-public class BaseTest {
+public class BaseTest{
     protected int generateRandomNumber() {
         Random random = new Random();
         return random.nextInt(99999);
     }
     private WebDriver driver;
 
-    protected WebDriver getBrowserDriver(String browserName){
+    protected WebDriver getBrowserDriver(String browserName, String url){
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
         switch (browserList) {
             case FIREFOX:
@@ -30,7 +32,7 @@ public class BaseTest {
             default:
                 throw new RuntimeException("Browser name is not valid");
         }
-        driver.get("https://demo.nopcommerce.com/");
+        driver.get(url);
         driver.manage().window().maximize();
         return driver;
     }

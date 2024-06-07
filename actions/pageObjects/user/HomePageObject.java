@@ -1,9 +1,10 @@
-package pageObjects;
+package pageObjects.user;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageObjects.sidebar.CustomerInfoPageObject;
-import pageUIs.HomePageUI;
+import pageObjects.PageGenerator;
+import pageObjects.user.sidebar.CustomerInfoPageObject;
+import pageUIs.users.HomePageUI;
 
 public class HomePageObject extends BasePage {
     private WebDriver driver;
@@ -15,13 +16,13 @@ public class HomePageObject extends BasePage {
     public RegisterPageObject clickRegisterLink() {
         waitForElementClickable(driver,HomePageUI.REGISTER_LINK);
         clickToElement(driver, HomePageUI.REGISTER_LINK);
-        return PageGenerator.getRegisterPageObject(driver);
+        return PageGenerator.getRegisterPage(driver);
     }
 
-    public LoginPageObject clickToLoginLink() {
+    public UserLoginPageObject clickToLoginLink() {
         waitForElementClickable(driver,HomePageUI.LOGIN_LINK);
         clickToElement(driver,HomePageUI.LOGIN_LINK);
-        return PageGenerator.getLoginPageObject(driver);
+        return PageGenerator.getUserLoginPage(driver);
     }
 
     public boolean isMyAccountLinkDisplayed() {

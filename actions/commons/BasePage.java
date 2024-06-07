@@ -7,9 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObjects.*;
-import pageObjects.sidebar.*;
-import pageUIs.BasePageUI;
+import pageObjects.PageGenerator;
+import pageObjects.user.sidebar.*;
+import pageUIs.users.BasePageUI;
 
 import java.time.Duration;
 import java.util.List;
@@ -389,6 +389,25 @@ public class BasePage {
         waitForElementVisible(driver, BasePageUI.CUSTOMER_INFOR_LINK);
         clickToElement(driver, BasePageUI.CUSTOMER_INFOR_LINK);
         return PageGenerator.getCustomerInfoPageObject(driver);
+    }
+
+    public Boolean isPageLoadedSuccess(WebDriver driver){
+        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return (Boolean) jsExecutor.executeScript("return (window.jQuery!=null)&&(jQuery.active===0);");
+            }
+        };
+        ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver driver) {
+                return jsExecutor.executeScript("return document.readyState").toString().equals("complete");
+            }
+        };
+        return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
+
     }
 
 

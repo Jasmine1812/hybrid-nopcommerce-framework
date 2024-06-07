@@ -1,9 +1,7 @@
-package pageObjects.sidebar;
+package pageObjects.user.sidebar;
 
-import commons.BasePage;
 import org.openqa.selenium.WebDriver;
-import pageObjects.SidebarPageObject;
-import pageUIs.LoginPageUI;
+import pageObjects.user.SidebarPageObject;
 
 public class MyProductReviewPageObject extends SidebarPageObject {
     private WebDriver driver;

@@ -8,18 +8,21 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.*;
-import pageObjects.sidebar.*;
+import pageObjects.user.HomePageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.PageGenerator;
+import pageObjects.user.RegisterPageObject;
+import pageObjects.user.sidebar.*;
 
 import java.time.Duration;
 
 public class Level_07_Switch_Page_Object extends BaseTest {
 
 
-    @Parameters("browser")
+    @Parameters({"browser","userUrl", "adminUrl" })
     @BeforeClass
-    public void beforeClass(String browserName) {
-        driver = getBrowserDriver(browserName);
+    public void beforeClass(String browserName, String userUrl, String adminUrl) {
+        driver = getBrowserDriver(browserName, userUrl);
         homePage = PageGenerator.getHomePageObject(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         firstName = "Tran";
@@ -96,7 +99,7 @@ public class Level_07_Switch_Page_Object extends BaseTest {
 
     private WebDriver driver;
     private HomePageObject homePage;
-    private LoginPageObject loginPage;
+    private UserLoginPageObject loginPage;
     private CustomerInfoPageObject customerInfoPage;
     private RegisterPageObject registerPage;
 
@@ -107,6 +110,7 @@ public class Level_07_Switch_Page_Object extends BaseTest {
     private MyProductReviewPageObject myProductReviewPage;
     private OrdersPageObject ordersPage;
     private RewardPointsPageObject rewardPointsPage;
+    private String adminUrl, userUrl;
 
     private String firstName, lastName, day, month, year, email, company, password, confirmPassword;
 

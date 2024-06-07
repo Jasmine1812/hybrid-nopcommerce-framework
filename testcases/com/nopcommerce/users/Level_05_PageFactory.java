@@ -22,14 +22,17 @@ public class Level_05_PageFactory extends BaseTest {
     private LoginPageFactory loginPage;
     private CustomerInfoPageFactory customerInfoPage;
     private RegisterPageFactory registerPage;
+    private String adminUrl, userUrl;
 
     private String firstName, lastName, day, month, year, email, company, password, confirmPassword;
 
 
-    @Parameters("browser")
+    @Parameters({"browser","userUrl", "adminUrl" })
     @BeforeClass
-    public void beforeClass(String browserName) {
-        driver = getBrowserDriver(browserName);
+    public void beforeClass(String browserName, String userUrl, String adminUrl) {
+        driver = getBrowserDriver(browserName,userUrl);
+        this.adminUrl = adminUrl;
+        this.userUrl = userUrl;
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         firstName = "Tran";
         lastName = "Thi";

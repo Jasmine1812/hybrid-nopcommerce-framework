@@ -1,12 +1,8 @@
 package PageFactory;
 
-import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.*;
-import pageUIs.CustomerInfoPageUI;
-
-import java.util.List;
 
 public class CustomerInfoPageFactory extends BasePageFactory {
     private WebDriver driver;

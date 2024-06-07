@@ -8,10 +8,10 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pageObjects.sidebar.CustomerInfoPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.user.sidebar.CustomerInfoPageObject;
+import pageObjects.user.HomePageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.RegisterPageObject;
 
 import java.time.Duration;
 
@@ -19,7 +19,7 @@ public class Level_03_Page_Object extends BaseTest {
 
     private WebDriver driver;
     private HomePageObject homePage;
-    private LoginPageObject loginPage;
+    private UserLoginPageObject loginPage;
     private CustomerInfoPageObject customerInfoPage;
     private RegisterPageObject registerPage;
 
@@ -67,7 +67,7 @@ public class Level_03_Page_Object extends BaseTest {
     public void TC_02_Login() {
         homePage = new HomePageObject(driver);
         homePage.clickToLoginLink();
-        loginPage = new LoginPageObject(driver);
+        loginPage = new UserLoginPageObject(driver);
         loginPage.enterToEmailTextbox(email);
         loginPage.enterToPasswordTextbox(password);
         loginPage.clickToLoginButton();

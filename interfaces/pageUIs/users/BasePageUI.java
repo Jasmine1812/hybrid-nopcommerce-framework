@@ -1,6 +1,6 @@
-package pageUIs;
+package pageUIs.users;
 
-public class SidebarPageUI {
+public class BasePageUI {
     public static final String CUSTOMER_INFOR_LINK = "//div[@class='listbox']//li[contains(@class,'customer-info')]";
     public static final String ADDRESSES_LINK = "//div[@class='listbox']//li[contains(@class,'customer-addresses')]";
     public static final String ORDERS_LINK = "//div[@class='listbox']//li[contains(@class,'customer-orders')]";

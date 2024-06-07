@@ -3,9 +3,11 @@
 <suite name="NopCommerce Automation Testing" verbose="1">
 
     <test name="Run on Chrome browser">
+        <parameter name="userUrl" value="https://demo.nopcommerce.com"></parameter>
+        <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com"></parameter>
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_08_Page_Navigation"/>
+            <class name="com.nopcommerce.users.Level_09_Switch_Role"/>
         </classes>
     </test>
 <!--    <test name="Run on Firefox browser">-->

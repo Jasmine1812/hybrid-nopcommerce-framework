@@ -1,22 +1,27 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
-import pageObjects.sidebar.*;
+import pageObjects.admin.AdminLoginPageObject;
+import pageObjects.admin.AdminDashboardPageObject;
+import pageObjects.user.HomePageObject;
+import pageObjects.user.RegisterPageObject;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.sidebar.*;
 
 public class PageGenerator {
     public static HomePageObject getHomePageObject(WebDriver driver){
         return new HomePageObject(driver);
     }
 
-    public static LoginPageObject getLoginPageObject(WebDriver driver){
-        return new LoginPageObject(driver);
+    public static UserLoginPageObject getUserLoginPage(WebDriver driver){
+        return new UserLoginPageObject(driver);
     }
     
     public static CustomerInfoPageObject getCustomerInfoPageObject(WebDriver driver){
         return new CustomerInfoPageObject(driver);
     }
     
-    public static RegisterPageObject getRegisterPageObject(WebDriver driver){
+    public static RegisterPageObject getRegisterPage(WebDriver driver){
         return new RegisterPageObject(driver);
     }
 
@@ -46,6 +51,14 @@ public class PageGenerator {
 
     public static MyProductReviewPageObject getMyProductReviewPage(WebDriver driver){
         return new MyProductReviewPageObject(driver);
+    }
+
+    public static AdminLoginPageObject getAdminLoginPage(WebDriver driver){
+        return new AdminLoginPageObject(driver);
+    }
+
+    public static AdminDashboardPageObject getAdminDashboardPage(WebDriver driver){
+        return new AdminDashboardPageObject(driver);
     }
 
 }
