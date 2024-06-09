@@ -52,7 +52,7 @@ public class BasePage {
 
     //Alert
     public Alert waitAlertPresence(WebDriver driver) {
-        return new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.alertIsPresent());
+        return new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.alertIsPresent());
     }
 
     public void cancelAlert(WebDriver driver) {
@@ -106,11 +106,11 @@ public class BasePage {
     }
 
     public WebElement getElement(WebDriver driver, String locator) {
-        return driver.findElement(getByXpath(locator));
+        return driver.findElement(getByLocator(locator));
     }
 
     public List<WebElement> getListElement(WebDriver driver, String locator) {
-        return driver.findElements(getByXpath(locator));
+        return driver.findElements(getByLocator(locator));
     }
 
     public By getByXpath(String locator) {
@@ -142,8 +142,8 @@ public class BasePage {
         getElement(driver, parentLocator).click();
         sleepInSeconds(2);
 
-        List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(15)).
-                until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(childItemLocator)));
+        List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).
+                until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(childItemLocator)));
         sleepInSeconds(2);
 
         for (WebElement item : allItems) {
@@ -293,7 +293,7 @@ public class BasePage {
     }
 
     public boolean waitToJQueryAndJSLoadedSuccess(WebDriver driver) {
-        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
             @Override
             public Boolean apply(WebDriver driver) {
@@ -322,24 +322,24 @@ public class BasePage {
     }
 
     public void waitForElementVisible(WebDriver driver, String locator) {
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
     }
 
     public void waitForElementPresence(WebDriver driver, String locator) {
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.presenceOfElementLocated(getByXpath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.presenceOfElementLocated(getByLocator(locator)));
     }
 
     public void waitForElementSelected(WebDriver driver, String locator) {
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeSelected(getByXpath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.elementToBeSelected(getByLocator(locator)));
     }
 
 
     public void waitForElementClickable(WebDriver driver, String locator) {
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
     }
 
     public void waitForElementInvisible(WebDriver driver, String locator) {
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+        new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
     }
 
     // only user with Level_07_Switch_Page_Object
@@ -392,7 +392,7 @@ public class BasePage {
     }
 
     public Boolean isPageLoadedSuccess(WebDriver driver){
-        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
             @Override
@@ -409,6 +409,27 @@ public class BasePage {
         return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
 
     }
+
+    public By getByLocator(String locatorValue) {
+        By by = null;
+        if (locatorValue.startsWith("Xpath=") || locatorValue.startsWith("xpath=") || locatorValue.startsWith("XPATH=") || locatorValue.startsWith("XPath=")) {
+            by = By.xpath(locatorValue.substring(6));
+        } else if (locatorValue.startsWith("ID=") || locatorValue.startsWith("Id=") || locatorValue.startsWith("id=")) {
+            by = By.id(locatorValue.substring(3));
+        } else if (locatorValue.startsWith("class=") || locatorValue.startsWith("Class=") || locatorValue.startsWith("CLass=")) {
+            by = By.className(locatorValue.substring(6));
+        } else if (locatorValue.startsWith("css=") || locatorValue.startsWith("CSS=") || locatorValue.startsWith("Css=")) {
+            by = By.cssSelector(locatorValue.substring(4));
+        } else if (locatorValue.startsWith("Name=") || locatorValue.startsWith("NAME=") || locatorValue.startsWith("name=")) {
+            by = By.name(locatorValue.substring(5));
+        } else if (locatorValue.startsWith("tagName=") || locatorValue.startsWith("TagName=") || locatorValue.startsWith("Tagname=") || locatorValue.startsWith("tagname=")) {
+            by = By.tagName(locatorValue.substring(8));
+        } else {
+            throw new RuntimeException("Locator type is not valid");
+        }
+        return by;
+    }
+    private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 
 
 }

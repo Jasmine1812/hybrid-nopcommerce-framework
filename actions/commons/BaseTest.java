@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestNGListener;
 import org.testng.ITestNGMethod;
 
+import java.time.Duration;
 import java.util.Locale;
 import java.util.Random;
 
@@ -16,6 +17,7 @@ public class BaseTest{
         return random.nextInt(99999);
     }
     private WebDriver driver;
+    private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 
     protected WebDriver getBrowserDriver(String browserName, String url){
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -34,6 +36,7 @@ public class BaseTest{
         }
         driver.get(url);
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
         return driver;
     }
 }

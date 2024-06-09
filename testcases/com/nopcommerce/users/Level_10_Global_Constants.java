@@ -2,31 +2,30 @@ package com.nopcommerce.users;
 
 
 import commons.BaseTest;
+import commons.GlobalConstants;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.admin.AdminLoginPageObject;
-import pageObjects.admin.AdminDashboardPageObject;
-import pageObjects.user.HomePageObject;
-import pageObjects.user.UserLoginPageObject;
 import pageObjects.PageGenerator;
+import pageObjects.admin.AdminDashboardPageObject;
+import pageObjects.admin.AdminLoginPageObject;
+import pageObjects.user.HomePageObject;
 import pageObjects.user.RegisterPageObject;
-import pageObjects.user.sidebar.*;
+import pageObjects.user.UserLoginPageObject;
+import pageObjects.user.sidebar.CustomerInfoPageObject;
 
 import java.time.Duration;
 
-public class Level_09_Switch_Role extends BaseTest {
-    @Parameters({"browser","userUrl", "adminUrl" })
+public class Level_10_Global_Constants extends BaseTest {
+    @Parameters({"browser"})
     @BeforeClass
-    public void beforeClass(String browserName, String userUrl, String adminUrl) {
-        driver = getBrowserDriver(browserName,userUrl);
-        this.adminUrl = adminUrl;
-        this.userUrl = userUrl;
+    public void beforeClass(String browserName) {
+        driver = getBrowserDriver(browserName, userUrl);
         homePage = PageGenerator.getHomePageObject(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
         firstName = "Tran";
         lastName = "Thi";
         day = "10";
@@ -59,7 +58,7 @@ public class Level_09_Switch_Role extends BaseTest {
         //Tu UserPage sang AdminPage
         homePage.openPageUrl(driver, adminUrl);
         adminLoginPage = PageGenerator.getAdminLoginPage(driver);
-        adminDashboardPage = adminLoginPage.loginToAdmin("admin@yourstore.com", "admin");
+        adminDashboardPage = adminLoginPage.loginToAdmin(GlobalConstants.DEV_ADMIN_USERNAME, GlobalConstants.DEV_ADMIN_PASSWORD);
         Assert.assertTrue(adminDashboardPage.isPageLoadedSuccess(driver));
     }
 
@@ -84,7 +83,9 @@ public class Level_09_Switch_Role extends BaseTest {
     private RegisterPageObject registerPage;
 
     private String firstName, lastName, day, month, year, email, company, password, confirmPassword;
-    private String adminUrl, userUrl;
+    private String adminUrl = GlobalConstants.DEV_ADMIN_URL;
+    private String userUrl = GlobalConstants.DEV_USER_URL;
+
     private AdminDashboardPageObject adminDashboardPage;
     private AdminLoginPageObject adminLoginPage;
 
