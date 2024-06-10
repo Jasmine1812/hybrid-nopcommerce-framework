@@ -7,7 +7,7 @@
 <!--        <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com"></parameter>-->
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_10_Global_Constants"/>
+            <class name="com.nopcommerce.users.Level_11_Dynamic_Locator_Rest_Param"/>
         </classes>
     </test>
 <!--    <test name="Run on Firefox browser">-->
