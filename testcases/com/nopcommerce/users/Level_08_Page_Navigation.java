@@ -25,7 +25,7 @@ public class Level_08_Page_Navigation extends BaseTest {
         driver = getBrowserDriver(browserName,userUrl);
         this.adminUrl = adminUrl;
         this.userUrl = userUrl;
-        homePage = PageGenerator.getHomePageObject(driver);
+        homePage = PageGenerator.getHomePage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         firstName = "Tran";
         lastName = "Thi";

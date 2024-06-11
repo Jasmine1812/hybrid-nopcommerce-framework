@@ -66,21 +66,21 @@ public class SidebarPageObject extends BasePage {
         clickToElement(driver, SidebarPageUI.DYNAMIC_SIDEBAR_LINK, pageName);
 
         switch (pageName) {
-            case "customer-info":
+            case "Customer info":
                 return PageGenerator.getCustomerInfoPageObject(driver);
-            case "customer-addresses":
+            case "Addresses":
                 return PageGenerator.getAddressPage(driver);
-            case "customer-orders":
-                return PageGenerator.getCustomerInfoPageObject(driver);
-            case "downloadable-products":
+            case "Orders":
+                return PageGenerator.getOrdersPage(driver);
+            case "Downloadable products":
                 return PageGenerator.getDownloadPage(driver);
-            case "back-in-stock-subscriptions":
+            case "Back in stock subscriptions":
                 return PageGenerator.getBackInStockPage(driver);
-            case "reward-points":
+            case "Reward points":
                 return PageGenerator.getRewardPointsPage(driver);
-            case "change-password":
+            case "Change password":
                 return PageGenerator.getChangePasswordPage(driver);
-            case "customer-reviews":
+            case "My product reviews":
                 return PageGenerator.getMyProductReviewPage(driver);
             default:
                 new RuntimeException("Sidebar page name incorrect");

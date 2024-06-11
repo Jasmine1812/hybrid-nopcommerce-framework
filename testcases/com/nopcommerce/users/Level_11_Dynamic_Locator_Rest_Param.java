@@ -22,7 +22,7 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
     @BeforeClass
     public void beforeClass(String browserName) {
         driver = getBrowserDriver(browserName, userUrl);
-        homePage = PageGenerator.getHomePageObject(driver);
+        homePage = PageGenerator.getHomePage(driver);
 
         firstName = "Tran";
         lastName = "Thi";
@@ -64,7 +64,7 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
     public void TC_02_Admin_To_User() {
         adminLoginPage = adminDashboardPage.clickToLogoutButton();
         adminLoginPage.openPageUrl(driver,userUrl);
-        homePage = PageGenerator.getHomePageObject(driver);
+        homePage = PageGenerator.getHomePage(driver);
         userLoginPage = homePage.clickToLoginLink();
         homePage = userLoginPage.loginToUserPage(email,password);
     }
@@ -85,22 +85,21 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 
     @Test
     public void TC_04_Switch_Page() {
-//        addressPage = customerInfoPage.openAddressPage();
-        addressPage = (AddressPageObject) customerInfoPage.openDynamicSideBarPage("customer-addresses");
-//        ordersPage = addressPage.openOrdersPage();
-//        downloadablePage = ordersPage.openDownloadPage();
-//        backInStockPage = downloadablePage.openBackInStockPage();
-//        rewardPointsPage = backInStockPage.openRewardPointsPage();
-//        changePasswordPage = rewardPointsPage.openChangePasswordPage();
-//        myProductReviewPage = changePasswordPage.openMyProductReviewPage();
-//        customerInfoPage = myProductReviewPage.openCustomerInforPage();
-
+        addressPage = (AddressPageObject) customerInfoPage.openDynamicSideBarPage("Addresses");
+        ordersPage = (OrdersPageObject) addressPage.openDynamicSideBarPage("Orders");
+        downloadablePage = (DownloadablePageObject) ordersPage.openDynamicSideBarPage("Downloadable products");
     }
 
     @Test
     public void TC_05_Switch_Page() {
-        addressPage.openDynamicSideBarPage("customer-reviews");
-        myProductReviewPage = PageGenerator.getMyProductReviewPage(driver);
+        downloadablePage.openDynamicSideBarPage("Back in stock subscriptions");
+        backInStockPage = PageGenerator.getBackInStockPage(driver);
+
+        backInStockPage.openDynamicSideBarPage("Reward points");
+        rewardPointsPage = PageGenerator.getRewardPointsPage(driver);
+
+        rewardPointsPage.openDynamicSideBarPage("Change password");
+        changePasswordPage = PageGenerator.getChangePasswordPage(driver);
 
     }
 

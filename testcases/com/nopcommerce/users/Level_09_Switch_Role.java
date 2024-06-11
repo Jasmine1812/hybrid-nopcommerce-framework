@@ -25,7 +25,7 @@ public class Level_09_Switch_Role extends BaseTest {
         driver = getBrowserDriver(browserName,userUrl);
         this.adminUrl = adminUrl;
         this.userUrl = userUrl;
-        homePage = PageGenerator.getHomePageObject(driver);
+        homePage = PageGenerator.getHomePage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         firstName = "Tran";
         lastName = "Thi";
@@ -67,7 +67,7 @@ public class Level_09_Switch_Role extends BaseTest {
     public void TC_02_Admin_To_User() {
         adminLoginPage = adminDashboardPage.clickToLogoutButton();
         adminLoginPage.openPageUrl(driver,userUrl);
-        homePage = PageGenerator.getHomePageObject(driver);
+        homePage = PageGenerator.getHomePage(driver);
         userLoginPage = homePage.clickToLoginLink();
         homePage = userLoginPage.loginToUserPage(email,password);
     }

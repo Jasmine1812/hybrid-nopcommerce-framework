@@ -17,14 +17,12 @@ import pageObjects.user.RegisterPageObject;
 import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.sidebar.CustomerInfoPageObject;
 
-import java.time.Duration;
-
 public class Level_10_Global_Constants extends BaseTest {
     @Parameters({"browser"})
     @BeforeClass
     public void beforeClass(String browserName) {
         driver = getBrowserDriver(browserName, userUrl);
-        homePage = PageGenerator.getHomePageObject(driver);
+        homePage = PageGenerator.getHomePage(driver);
 
         firstName = "Tran";
         lastName = "Thi";
@@ -66,7 +64,7 @@ public class Level_10_Global_Constants extends BaseTest {
     public void TC_02_Admin_To_User() {
         adminLoginPage = adminDashboardPage.clickToLogoutButton();
         adminLoginPage.openPageUrl(driver,userUrl);
-        homePage = PageGenerator.getHomePageObject(driver);
+        homePage = PageGenerator.getHomePage(driver);
         userLoginPage = homePage.clickToLoginLink();
         homePage = userLoginPage.loginToUserPage(email,password);
     }

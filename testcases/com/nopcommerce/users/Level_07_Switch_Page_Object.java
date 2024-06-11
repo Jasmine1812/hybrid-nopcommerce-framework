@@ -23,7 +23,7 @@ public class Level_07_Switch_Page_Object extends BaseTest {
     @BeforeClass
     public void beforeClass(String browserName, String userUrl, String adminUrl) {
         driver = getBrowserDriver(browserName, userUrl);
-        homePage = PageGenerator.getHomePageObject(driver);
+        homePage = PageGenerator.getHomePage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         firstName = "Tran";
         lastName = "Thi";

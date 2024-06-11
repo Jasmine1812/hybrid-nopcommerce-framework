@@ -75,6 +75,6 @@ public class RegisterPageObject extends BasePage {
     public HomePageObject clickToLogoutLink() {
         waitForElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
         clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
-        return PageGenerator.getHomePageObject(driver);
+        return PageGenerator.getHomePage(driver);
     }
 }

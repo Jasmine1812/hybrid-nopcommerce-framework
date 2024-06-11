@@ -9,7 +9,7 @@ import pageObjects.user.UserLoginPageObject;
 import pageObjects.user.sidebar.*;
 
 public class PageGenerator {
-    public static HomePageObject getHomePageObject(WebDriver driver){
+    public static HomePageObject getHomePage(WebDriver driver){
         return new HomePageObject(driver);
     }
 
