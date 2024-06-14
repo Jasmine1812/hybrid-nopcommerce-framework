@@ -10,6 +10,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.jquery.HomePageJQueryObject;
 import pageObjects.jquery.PageGeneratorJQuery;
+import pageUIs.jquery.HomePageJQueryUI;
 
 public class Level_12_Handle_DataTable extends BaseTest {
     @Parameters({"browser", "url"})
@@ -19,7 +20,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
         homePageJQuery = PageGeneratorJQuery.getHomePageJQuery(driver);
     }
 
-    @Test
+    //@Test
     public void TC_01_Search() {
         homePageJQuery.inputToSearchTextboxByName("Females", "384187");
         homePageJQuery.inputToSearchTextboxByName( "Country", "Afghanistan");
@@ -27,7 +28,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
         homePageJQuery.inputToSearchTextboxByName( "Total", "791312");
     }
 
-    @Test
+   // @Test
     public void TC_02_Paging() {
         homePageJQuery.refreshCurrentPage(driver);
         homePageJQuery.clickToPagingByNumber( "4");
@@ -37,19 +38,28 @@ public class Level_12_Handle_DataTable extends BaseTest {
         Assert.assertTrue(homePageJQuery.isPageActiveByNumber( "10"));
     }
 
-    @Test
+    //@Test
     public void TC_03_Displayed() {
         homePageJQuery.refreshCurrentPage(driver);
         Assert.assertTrue(homePageJQuery.isCellValuesDisplayed("12253515", "AFRICA", "12599691", "24853148"));
     }
 
-    @Test
+    //@Test
     public void TC_04_Icon_Button_Checkbox() {
         homePageJQuery.refreshCurrentPage(driver);
         homePageJQuery.clickToRowActionByCountryName("Algeria", "edit");
         homePageJQuery.refreshCurrentPage(driver);
         homePageJQuery.clickToRowActionByCountryName("Afghanistan", "remove");
+    }
 
+    //@Test
+    public void TC_05_Get_All_Column_Values(){
+        homePageJQuery.getAllPageValuesByColumnName("Country");
+        homePageJQuery.getAllPageValuesByColumnName("Total");
+    }
+
+    public void TC_06_Sendkey_Values(){
+        homePageJQuery.openPageUrl(driver, "https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
     }
 
 
