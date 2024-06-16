@@ -2,10 +2,14 @@ package javaBasic;
 
 import org.testng.annotations.Test;
 
+import java.io.File;
+
 public class Topic_08_String {
 
     @Test
     public void TC_01() {
+        String filePath = System.getProperty("user.dir") + File.separator + "uploadFiles" + File.separator + "image01.jpg";
+        System.out.println(filePath);
         String studentName = new String("Nguyen Thi Tuoi 10/04/1991");
         char newStudentName[] = studentName.toCharArray();
         int count = 0;

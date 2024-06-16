@@ -11,6 +11,7 @@ import pageObjects.PageGenerator;
 import pageObjects.user.sidebar.*;
 import pageUIs.users.BasePageUI;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -149,6 +150,10 @@ public class BasePage {
 
     public void selectItemInDropdown(WebDriver driver, String locator, String textItem) {
         new Select(getElement(driver, locator)).selectByVisibleText(textItem);
+    }
+
+    public void selectItemInDropdown(WebDriver driver, String locator, String textItem, String... restParams) {
+        new Select(getElement(driver, getDynamicLocator(locator,restParams))).selectByVisibleText(textItem);
     }
 
     public String getSelectedItemInDropdown(WebDriver driver, String locator) {
@@ -467,6 +472,16 @@ public class BasePage {
             throw new RuntimeException("Locator type is not valid");
         }
         return by;
+    }
+
+    public void uploadMultipleFiles(WebDriver driver, String... fileNames){
+        String filePath = GlobalConstants.UPLOAD_PATH;
+        String fullFileName = "";
+        for (String file: fileNames){
+            fullFileName = fullFileName + filePath + file + "\n";
+        }
+        fullFileName = fullFileName.trim();
+        getElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(fullFileName);
     }
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 

@@ -9,4 +9,5 @@ public class BasePageUI {
     public static final String REWARD_POINTS_LINK = "xpath=//div[@class='listbox']//li[contains(@class,'reward-points')]";
     public static final String CHANGE_PASSWORD_LINK = "xpath=//div[@class='listbox']//li[contains(@class,'change-password')]";
     public static final String MY_PRODUCT_REVIEW_LINK = "xpath=//div[@class='listbox']//li[contains(@class,'customer-reviews')]";
+    public static final String UPLOAD_FILE = "xpath=//input[@type='file']";
 }

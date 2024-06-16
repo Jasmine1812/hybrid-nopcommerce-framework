@@ -59,4 +59,15 @@ public class HomePageJQueryObject extends BasePage {
 
         }
     }
+    public void inputToTextBoxByColumnNameAndRowIndex( String columnName, String rowIndex, String valueToSend){
+        int indexColumn = getListElementSize(driver, HomePageJQueryUI.COLUMN_INDEX_JQUERY_BY_COLUMN_NAME, columnName) + 1;
+        waitForElementVisible(driver, HomePageJQueryUI.DYNAMIC_TEXTBOX_BY_ROW_INDEX_AND_COLUMN_INDEX, rowIndex, String.valueOf(indexColumn));
+        sendkeyToElement(driver, HomePageJQueryUI.DYNAMIC_TEXTBOX_BY_ROW_INDEX_AND_COLUMN_INDEX, valueToSend, rowIndex, String.valueOf(indexColumn));
+    }
+
+    public void selectToDropdownByColumnNameAndRowIndex( String columnName, String rowIndex, String selectItem){
+        int indexColumn = getListElementSize(driver, HomePageJQueryUI.COLUMN_INDEX_JQUERY_BY_COLUMN_NAME, columnName) + 1;
+        waitForElementVisible(driver, HomePageJQueryUI.DYNAMIC_DROPDOWN_BY_ROW_INDEX_AND_COLUMN_INDEX, rowIndex, String.valueOf(indexColumn));
+        selectItemInDropdown(driver, HomePageJQueryUI.DYNAMIC_DROPDOWN_BY_ROW_INDEX_AND_COLUMN_INDEX, selectItem, rowIndex, String.valueOf(indexColumn));
+    }
 }

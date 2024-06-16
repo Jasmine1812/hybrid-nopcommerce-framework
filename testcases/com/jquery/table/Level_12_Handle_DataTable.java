@@ -23,19 +23,19 @@ public class Level_12_Handle_DataTable extends BaseTest {
     //@Test
     public void TC_01_Search() {
         homePageJQuery.inputToSearchTextboxByName("Females", "384187");
-        homePageJQuery.inputToSearchTextboxByName( "Country", "Afghanistan");
-        homePageJQuery.inputToSearchTextboxByName( "Males", "407124");
-        homePageJQuery.inputToSearchTextboxByName( "Total", "791312");
+        homePageJQuery.inputToSearchTextboxByName("Country", "Afghanistan");
+        homePageJQuery.inputToSearchTextboxByName("Males", "407124");
+        homePageJQuery.inputToSearchTextboxByName("Total", "791312");
     }
 
-   // @Test
+    // @Test
     public void TC_02_Paging() {
         homePageJQuery.refreshCurrentPage(driver);
-        homePageJQuery.clickToPagingByNumber( "4");
-        Assert.assertTrue(homePageJQuery.isPageActiveByNumber( "4"));
+        homePageJQuery.clickToPagingByNumber("4");
+        Assert.assertTrue(homePageJQuery.isPageActiveByNumber("4"));
 
-        homePageJQuery.clickToPagingByNumber( "10");
-        Assert.assertTrue(homePageJQuery.isPageActiveByNumber( "10"));
+        homePageJQuery.clickToPagingByNumber("10");
+        Assert.assertTrue(homePageJQuery.isPageActiveByNumber("10"));
     }
 
     //@Test
@@ -53,13 +53,18 @@ public class Level_12_Handle_DataTable extends BaseTest {
     }
 
     //@Test
-    public void TC_05_Get_All_Column_Values(){
+    public void TC_05_Get_All_Column_Values() {
         homePageJQuery.getAllPageValuesByColumnName("Country");
         homePageJQuery.getAllPageValuesByColumnName("Total");
     }
 
-    public void TC_06_Sendkey_Values(){
+    @Test
+    public void TC_06_Sendkey_Values() {
         homePageJQuery.openPageUrl(driver, "https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
+        homePageJQuery.inputToTextBoxByColumnNameAndRowIndex("Company", "1", "1234");
+        homePageJQuery.inputToTextBoxByColumnNameAndRowIndex("Contact Person", "2", "TuoiNT");
+        homePageJQuery.selectToDropdownByColumnNameAndRowIndex("Country", "3", "Japan");
+
     }
 
 
