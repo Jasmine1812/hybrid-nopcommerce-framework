@@ -20,6 +20,11 @@ public class UploadPage extends BasePage {
     }
 
     public void clickStartButtonOnEachFile() {
+        List<WebElement> startButton = getListElement(driver, UploadPageUI.MULTIPLE_START_BUTTON);
+        for (WebElement button: startButton){
+            waitForElementClickable(driver, button);
+            clickToElement(driver, button);
+        }
 
     }
 

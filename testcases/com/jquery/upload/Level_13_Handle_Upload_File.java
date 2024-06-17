@@ -18,6 +18,7 @@ public class Level_13_Handle_Upload_File extends BaseTest {
     String image1 = "image01.jpg";
     String image2 = "image02.jpg";
     String image3 = "image03.jpg";
+    String multiFile[] = {image1, image2, image3};
     private UploadPage uploadPage;
 
     @Parameters({"browser", "url"})
@@ -47,10 +48,22 @@ public class Level_13_Handle_Upload_File extends BaseTest {
         Assert.assertTrue(uploadPage.isFileUploadedSuccess(image1));
         Assert.assertTrue(uploadPage.isFileUploadedSuccess(image2));
         Assert.assertTrue(uploadPage.isFileUploadedSuccess(image3));
+    }
 
+    @Test
+    public void TC_02_Multiple_Upload_File(){
+        uploadPage.refreshCurrentPage(driver);
+        uploadPage.uploadMultipleFiles(driver,multiFile);
 
+        Assert.assertTrue(uploadPage.isFileLoadedSuccess(image1));
+        Assert.assertTrue(uploadPage.isFileLoadedSuccess(image2));
+        Assert.assertTrue(uploadPage.isFileLoadedSuccess(image3));
 
+        uploadPage.clickStartButtonOnEachFile();
 
+        Assert.assertTrue(uploadPage.isFileUploadedSuccess(image1));
+        Assert.assertTrue(uploadPage.isFileUploadedSuccess(image2));
+        Assert.assertTrue(uploadPage.isFileUploadedSuccess(image3));
     }
     @AfterClass
     public void afterClass() {
