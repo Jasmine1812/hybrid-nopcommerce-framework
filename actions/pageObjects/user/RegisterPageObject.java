@@ -77,4 +77,14 @@ public class RegisterPageObject extends BasePage {
         clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
         return PageGenerator.getHomePage(driver);
     }
+
+    public String getLastNameErrorMessageText() {
+        waitForElementVisible(driver, RegisterPageUI.LAST_NAME_ERROR_MESSAGE_TEXT);
+        return getElementText(driver, RegisterPageUI.LAST_NAME_ERROR_MESSAGE_TEXT);
+    }
+
+    public String getFirstNameErrorMessageText() {
+        waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_ERROR_MESSAGE_TEXT);
+        return getElementText(driver, RegisterPageUI.FIRST_NAME_ERROR_MESSAGE_TEXT);
+    }
 }
