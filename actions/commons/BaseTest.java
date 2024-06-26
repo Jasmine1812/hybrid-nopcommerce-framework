@@ -1,5 +1,7 @@
 package commons;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,6 +16,10 @@ import java.util.Locale;
 import java.util.Random;
 
 public class BaseTest{
+    protected final Logger log;
+    public BaseTest(){
+        log = LogManager.getLogger(getClass());
+    }
     protected int generateRandomNumber() {
         Random random = new Random();
         return random.nextInt(99999);
@@ -67,11 +73,12 @@ public class BaseTest{
         boolean pass = true;
         try {
             Assert.assertTrue(condition);
+            log.info("---------------------- Passed -----------------------");
         } catch (Throwable e) {
             pass = false;
-
             VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
+            log.info("---------------------- Failed -----------------------");
         }
         return pass;
     }
@@ -80,10 +87,12 @@ public class BaseTest{
         boolean pass = true;
         try {
             Assert.assertFalse(condition);
+            log.info("---------------------- Passed -----------------------");
         } catch (Throwable e) {
             pass = false;
             VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
+            log.info("---------------------- Failed -----------------------");
         }
         return pass;
     }
@@ -92,10 +101,12 @@ public class BaseTest{
         boolean pass = true;
         try {
             Assert.assertEquals(actual, expected);
+            log.info("---------------------- Passed -----------------------");
         } catch (Throwable e) {
             pass = false;
             VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
             Reporter.getCurrentTestResult().setThrowable(e);
+            log.info("---------------------- Failed -----------------------");
         }
         return pass;
     }

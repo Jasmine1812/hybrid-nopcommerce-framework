@@ -10,7 +10,7 @@
 <!--        <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com"></parameter>-->
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_14_Assert_Verify"/>
+            <class name="com.nopcommerce.users.Level_15_Log"/>
         </classes>
     </test>
 <!--    <test name="Run on Firefox browser">-->
