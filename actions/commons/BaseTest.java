@@ -10,7 +10,9 @@ import org.testng.Assert;
 import org.testng.ITestNGListener;
 import org.testng.ITestNGMethod;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeSuite;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.Locale;
 import java.util.Random;
@@ -24,6 +26,11 @@ public class BaseTest{
         Random random = new Random();
         return random.nextInt(99999);
     }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
     private WebDriver driver;
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 
@@ -110,5 +117,33 @@ public class BaseTest{
         }
         return pass;
     }
+    @BeforeSuite
+    public void deleteFileInReport() {
+        // Remove all file in ReportNG screenshot (image)
+        log.info("-----START delete file in folder----------");
+        deleteAllFileInFolder("reportNGImage");
+        log.info("-----END delete file in folder----------");
+
+        // Remove all file in Allure attachment (json file)
+//        deleteAllFileInFolder("allure-json");
+    }
+
+    public void deleteAllFileInFolder(String folderName) {
+        try {
+            String pathFolderDownload = GlobalConstants.REPORTNG_IMAGE_PATH;
+            File file = new File(pathFolderDownload);
+            File[] listOfFiles = file.listFiles();
+            if (listOfFiles.length != 0) {
+                for (int i = 0; i < listOfFiles.length; i++) {
+                    if (listOfFiles[i].isFile() && !listOfFiles[i].getName().equals("environment.properties")) {
+                        new File(listOfFiles[i].toString()).delete();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
+    }
+
 }
 
