@@ -14,4 +14,5 @@ public class GlobalConstants {
     public static final String REPORTNG_IMAGE_PATH = RELATIVE_PROJECT_PATH + File.separator +  "reportNGImage" + File.separator;
     public static final long SHORT_TIMEOUT = 5;
     public static final long LONG_TIMEOUT = 30;
+    public static final String JAVA_VERSION = System.getProperty("java.version");
 }

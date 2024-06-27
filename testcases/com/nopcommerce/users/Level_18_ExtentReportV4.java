@@ -13,11 +13,8 @@ import pageObjects.admin.AdminDashboardPageObject;
 import pageObjects.admin.AdminLoginPageObject;
 import pageObjects.user.HomePageObject;
 import pageObjects.user.RegisterPageObject;
-//import reportConfig.ExtentManager;
 
-import java.lang.reflect.Method;
-
-public class Level_18_ExtentReportV3 extends BaseTest {
+public class Level_18_ExtentReportV4 extends BaseTest {
     @Parameters({"browser"})
     @BeforeClass
     public void beforeClass(String browserName) {

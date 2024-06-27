@@ -14,7 +14,7 @@
 <!--        <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com"></parameter>-->
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_18_ExtentReportV3"/>
+            <class name="com.nopcommerce.users.Level_18_ExtentReportV5"/>
         </classes>
     </test>
 <!--    <test name="Run on Firefox browser">-->
