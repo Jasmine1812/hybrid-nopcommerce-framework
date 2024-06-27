@@ -14,15 +14,15 @@
 <!--        <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com"></parameter>-->
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_17_ExtentReportV2"/>
+            <class name="com.nopcommerce.users.Level_18_ExtentReportV3"/>
         </classes>
     </test>
-    <test name="Run on Firefox browser">
-        <parameter name="browser" value="firefox"></parameter>
-        <classes>
-            <class name="com.nopcommerce.users.Level_17_ExtentReportV2"/>
-        </classes>
-    </test>
+<!--    <test name="Run on Firefox browser">-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.nopcommerce.users.Level_17_ExtentReportV2"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 <!--    <test name="Run on Edge browser">-->
 <!--        <parameter name="browser" value="edge"></parameter>-->
 <!--        <classes>-->
