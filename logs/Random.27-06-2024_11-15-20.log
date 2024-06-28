@@ -1,0 +1,42 @@
+[27-06-2024 11:15:38.833 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 1: verify Register link is not displayed
+[27-06-2024 11:15:38.892 INFO com.nopcommerce.users.Level_16_ReportNG] - ---------------------- Passed -----------------------
+[27-06-2024 11:15:38.892 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 2: Click to Register link
+[27-06-2024 11:15:39.380 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 3: Click to Gender Male Radio
+[27-06-2024 11:15:39.458 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 4: Click to Register button
+[27-06-2024 11:15:39.519 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 5: Verify error message at First Name textbox
+[27-06-2024 11:15:39.551 INFO com.nopcommerce.users.Level_16_ReportNG] - ---------------------- Passed -----------------------
+[27-06-2024 11:15:39.551 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 6: Verify error message at Last Name textbox
+[27-06-2024 11:15:39.578 INFO com.nopcommerce.users.Level_16_ReportNG] - ---------------------- Passed -----------------------
+[27-06-2024 11:15:39.580 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 7: Enter to First Name Textbox: Tran
+[27-06-2024 11:15:39.655 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 8: Enter to Last Name Textbox: Thi
+[27-06-2024 11:15:39.730 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 9: Enter to Day dropdown: 10
+[27-06-2024 11:15:39.807 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 10: Enter to Month dropdown: May
+[27-06-2024 11:15:39.874 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 11: Enter to Year dropdown: 1994
+[27-06-2024 11:15:39.941 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 12: Enter to Email textbox: jasmine17342@gmail.com
+[27-06-2024 11:15:40.028 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 13: Enter to Company textbox: NEXTG
+[27-06-2024 11:15:40.100 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 14: Enter to Password textbox: abcde12345-
+[27-06-2024 11:15:40.173 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 15: Enter to confirm password textbox: abcde12345-
+[27-06-2024 11:15:40.247 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 16: Click to Register button
+[27-06-2024 11:15:40.893 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 17: Verify success message is displayed
+[27-06-2024 11:15:40.927 INFO com.nopcommerce.users.Level_16_ReportNG] - ---------------------- Failed -----------------------
+[27-06-2024 11:16:08.290 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 1: verify Register link is not displayed
+[27-06-2024 11:16:08.353 INFO com.nopcommerce.users.Level_16_ReportNG] - ---------------------- Passed -----------------------
+[27-06-2024 11:16:08.353 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 2: Click to Register link
+[27-06-2024 11:16:09.289 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 3: Click to Gender Male Radio
+[27-06-2024 11:16:09.554 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 4: Click to Register button
+[27-06-2024 11:16:09.829 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 5: Verify error message at First Name textbox
+[27-06-2024 11:16:09.851 INFO com.nopcommerce.users.Level_16_ReportNG] - ---------------------- Passed -----------------------
+[27-06-2024 11:16:09.851 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 6: Verify error message at Last Name textbox
+[27-06-2024 11:16:09.870 INFO com.nopcommerce.users.Level_16_ReportNG] - ---------------------- Passed -----------------------
+[27-06-2024 11:16:09.870 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 7: Enter to First Name Textbox: Tran
+[27-06-2024 11:16:09.897 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 8: Enter to Last Name Textbox: Thi
+[27-06-2024 11:16:09.928 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 9: Enter to Day dropdown: 10
+[27-06-2024 11:16:10.164 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 10: Enter to Month dropdown: May
+[27-06-2024 11:16:10.395 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 11: Enter to Year dropdown: 1994
+[27-06-2024 11:16:10.630 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 12: Enter to Email textbox: jasmine86424@gmail.com
+[27-06-2024 11:16:10.672 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 13: Enter to Company textbox: NEXTG
+[27-06-2024 11:16:10.696 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 14: Enter to Password textbox: abcde12345-
+[27-06-2024 11:16:10.722 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 15: Enter to confirm password textbox: abcde12345-
+[27-06-2024 11:16:10.755 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 16: Click to Register button
+[27-06-2024 11:16:11.320 INFO com.nopcommerce.users.Level_16_ReportNG] - Register - Step 17: Verify success message is displayed
+[27-06-2024 11:16:11.374 INFO com.nopcommerce.users.Level_16_ReportNG] - ---------------------- Failed -----------------------

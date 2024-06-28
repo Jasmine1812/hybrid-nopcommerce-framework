@@ -10,34 +10,35 @@ public class HomePageObject extends BasePage {
     private WebDriver driver;
 
     public HomePageObject(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
     public RegisterPageObject clickRegisterLink() {
-        waitForElementClickable(driver,HomePageUI.REGISTER_LINK);
-        clickToElement(driver, HomePageUI.REGISTER_LINK);
+        waitForElementClickable(HomePageUI.REGISTER_LINK);
+        clickToElement(HomePageUI.REGISTER_LINK);
         return PageGenerator.getRegisterPage(driver);
     }
 
     public UserLoginPageObject clickToLoginLink() {
-        waitForElementClickable(driver,HomePageUI.LOGIN_LINK);
-        clickToElement(driver,HomePageUI.LOGIN_LINK);
+        waitForElementClickable(HomePageUI.LOGIN_LINK);
+        clickToElement(HomePageUI.LOGIN_LINK);
         return PageGenerator.getUserLoginPage(driver);
     }
 
     public boolean isMyAccountLinkDisplayed() {
-        waitForElementVisible(driver,HomePageUI.MY_ACCOUNT_LINK);
-        return isElementDisplayed(driver,HomePageUI.MY_ACCOUNT_LINK);
+        waitForElementVisible(HomePageUI.MY_ACCOUNT_LINK);
+        return isElementDisplayed(HomePageUI.MY_ACCOUNT_LINK);
     }
 
     public CustomerInfoPageObject clickToMyAccountLink() {
-        waitForElementClickable(driver,HomePageUI.MY_ACCOUNT_LINK);
-        clickToElement(driver,HomePageUI.MY_ACCOUNT_LINK);
+        waitForElementClickable(HomePageUI.MY_ACCOUNT_LINK);
+        clickToElement(HomePageUI.MY_ACCOUNT_LINK);
         return PageGenerator.getCustomerInfoPageObject(driver);
     }
 
     public boolean isRegisterLinkDisplayed() {
-        waitForElementVisible(driver, HomePageUI.REGISTER_LINK);
-        return isElementDisplayed(driver, HomePageUI.REGISTER_LINK);
+        waitForElementVisible(HomePageUI.REGISTER_LINK);
+        return isElementDisplayed(HomePageUI.REGISTER_LINK);
     }
 }

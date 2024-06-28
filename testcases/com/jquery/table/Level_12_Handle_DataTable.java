@@ -30,7 +30,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
 
     // @Test
     public void TC_02_Paging() {
-        homePageJQuery.refreshCurrentPage(driver);
+        homePageJQuery.refreshCurrentPage();
         homePageJQuery.clickToPagingByNumber("4");
         Assert.assertTrue(homePageJQuery.isPageActiveByNumber("4"));
 
@@ -40,15 +40,15 @@ public class Level_12_Handle_DataTable extends BaseTest {
 
     //@Test
     public void TC_03_Displayed() {
-        homePageJQuery.refreshCurrentPage(driver);
+        homePageJQuery.refreshCurrentPage();
         Assert.assertTrue(homePageJQuery.isCellValuesDisplayed("12253515", "AFRICA", "12599691", "24853148"));
     }
 
     //@Test
     public void TC_04_Icon_Button_Checkbox() {
-        homePageJQuery.refreshCurrentPage(driver);
+        homePageJQuery.refreshCurrentPage();
         homePageJQuery.clickToRowActionByCountryName("Algeria", "edit");
-        homePageJQuery.refreshCurrentPage(driver);
+        homePageJQuery.refreshCurrentPage();
         homePageJQuery.clickToRowActionByCountryName("Afghanistan", "remove");
     }
 
@@ -60,7 +60,7 @@ public class Level_12_Handle_DataTable extends BaseTest {
 
     @Test
     public void TC_06_Sendkey_Values() {
-        homePageJQuery.openPageUrl(driver, "https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
+        homePageJQuery.openPageUrl("https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
         homePageJQuery.inputToTextBoxByColumnNameAndRowIndex("Company", "1", "1234");
         homePageJQuery.inputToTextBoxByColumnNameAndRowIndex("Contact Person", "2", "TuoiNT");
         homePageJQuery.selectToDropdownByColumnNameAndRowIndex("Country", "3", "Japan");

@@ -1,0 +1,21 @@
+[26-06-2024 14:37:54.619 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 1: verify Register link is not displayed
+[26-06-2024 14:37:54.696 INFO com.nopcommerce.users.Level_15_Log] - ---------------------- Failed -----------------------
+[26-06-2024 14:37:54.697 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 2: Click to Register link
+[26-06-2024 14:37:55.166 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 3: Click to Gender Male Radio
+[26-06-2024 14:37:55.283 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 4: Click to Register button
+[26-06-2024 14:37:55.344 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 5: Verify error message at First Name textbox
+[26-06-2024 14:37:55.383 INFO com.nopcommerce.users.Level_15_Log] - ---------------------- Failed -----------------------
+[26-06-2024 14:37:55.383 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 6: Verify error message at Last Name textbox
+[26-06-2024 14:37:55.414 INFO com.nopcommerce.users.Level_15_Log] - ---------------------- Passed -----------------------
+[26-06-2024 14:37:55.415 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 7: Enter to First Name Textbox: Tran
+[26-06-2024 14:37:55.488 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 8: Enter to Last Name Textbox: Thi
+[26-06-2024 14:37:55.565 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 9: Enter to Day dropdown: 10
+[26-06-2024 14:37:55.655 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 10: Enter to Month dropdown: May
+[26-06-2024 14:37:55.719 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 11: Enter to Year dropdown: 1994
+[26-06-2024 14:37:55.788 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 12: Enter to Email textbox: jasmine87921@gmail.com
+[26-06-2024 14:37:55.875 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 13: Enter to Company textbox: NEXTG
+[26-06-2024 14:37:55.943 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 14: Enter to Password textbox: abcde12345-
+[26-06-2024 14:37:56.015 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 15: Enter to confirm password textbox: abcde12345-
+[26-06-2024 14:37:56.100 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 16: Click to Register button
+[26-06-2024 14:37:56.626 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 17: Verify success message is displayed
+[26-06-2024 14:37:56.653 INFO com.nopcommerce.users.Level_15_Log] - ---------------------- Failed -----------------------

@@ -1,0 +1,17 @@
+[26-06-2024 09:42:14.145 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 1: verify Register link is not displayed
+[26-06-2024 09:42:14.200 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 2: Click to Register link
+[26-06-2024 09:42:15.238 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 3: Click to Gender Male Radio
+[26-06-2024 09:42:15.311 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 4: Click to Register button
+[26-06-2024 09:42:15.368 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 5: Verify error message at First Name textbox
+[26-06-2024 09:42:15.401 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 6: Verify error message at Last Name textbox
+[26-06-2024 09:42:15.431 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 7: Enter to First Name Textbox: Tran
+[26-06-2024 09:42:15.504 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 8: Enter to Last Name Textbox: Thi
+[26-06-2024 09:42:15.577 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 9: Enter to Day dropdown: 10
+[26-06-2024 09:42:15.654 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 10: Enter to Month dropdown: May
+[26-06-2024 09:42:15.719 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 11: Enter to Year dropdown: 1994
+[26-06-2024 09:42:15.783 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 12: Enter to Email textbox: jasmine63918@gmail.com
+[26-06-2024 09:42:15.864 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 13: Enter to Company textbox: NEXTG
+[26-06-2024 09:42:15.937 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 14: Enter to Password textbox: abcde12345-
+[26-06-2024 09:42:16.005 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 15: Enter to confirm password textbox: abcde12345-
+[26-06-2024 09:42:16.077 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 16: Click to Register button
+[26-06-2024 09:42:16.688 INFO com.nopcommerce.users.Level_15_Log] - Register - Step 17: Verify success message is displayed

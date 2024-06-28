@@ -57,7 +57,7 @@ public class Level_09_Switch_Role extends BaseTest {
         homePage = registerPage.clickToLogoutLink();
 
         //Tu UserPage sang AdminPage
-        homePage.openPageUrl(driver, adminUrl);
+        homePage.openPageUrl(adminUrl);
         adminLoginPage = PageGenerator.getAdminLoginPage(driver);
         adminDashboardPage = adminLoginPage.loginToAdmin("admin@yourstore.com", "admin");
         Assert.assertTrue(adminDashboardPage.isPageLoadedSuccess(driver));
@@ -66,7 +66,7 @@ public class Level_09_Switch_Role extends BaseTest {
     @Test
     public void TC_02_Admin_To_User() {
         adminLoginPage = adminDashboardPage.clickToLogoutButton();
-        adminLoginPage.openPageUrl(driver,userUrl);
+        adminLoginPage.openPageUrl(userUrl);
         homePage = PageGenerator.getHomePage(driver);
         userLoginPage = homePage.clickToLoginLink();
         homePage = userLoginPage.loginToUserPage(email,password);

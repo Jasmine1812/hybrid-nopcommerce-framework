@@ -11,25 +11,26 @@ import java.util.List;
 public class UploadPage extends BasePage {
     private WebDriver driver;
     public UploadPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
     public boolean isFileLoadedSuccess(String fileName) {
-        waitForElementVisible(driver,UploadPageUI.FILE_LOADED_BY_NAME, fileName);
-        return isElementDisplayed(driver,UploadPageUI.FILE_LOADED_BY_NAME, fileName);
+        waitForElementVisible(UploadPageUI.FILE_LOADED_BY_NAME, fileName);
+        return isElementDisplayed(UploadPageUI.FILE_LOADED_BY_NAME, fileName);
     }
 
     public void clickStartButtonOnEachFile() {
-        List<WebElement> startButton = getListElement(driver, UploadPageUI.MULTIPLE_START_BUTTON);
+        List<WebElement> startButton = getListElement(UploadPageUI.MULTIPLE_START_BUTTON);
         for (WebElement button: startButton){
-            waitForElementClickable(driver, button);
-            clickToElement(driver, button);
+            waitForElementClickable(button);
+            clickToElement(button);
         }
 
     }
 
     public boolean isFileUploadedSuccess(String fileName) {
-        waitForElementVisible(driver,UploadPageUI.FILE_UPLOADED_BY_NAME, fileName);
-        return isElementDisplayed(driver,UploadPageUI.FILE_UPLOADED_BY_NAME, fileName);
+        waitForElementVisible(UploadPageUI.FILE_UPLOADED_BY_NAME, fileName);
+        return isElementDisplayed(UploadPageUI.FILE_UPLOADED_BY_NAME, fileName);
     }
 }

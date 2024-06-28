@@ -58,3 +58,18 @@
 [28-06-2024 04:27:24.549 INFO com.nopcommerce.users.Level_18_ExtentReportV4] - -----START delete file in folder----------
 [28-06-2024 04:27:24.555 INFO com.nopcommerce.users.Level_18_ExtentReportV4] - -----END delete file in folder----------
 [28-06-2024 04:27:33.192 INFO com.nopcommerce.users.Level_18_ExtentReportV4] - ---------------------- Passed -----------------------
+[28-06-2024 08:48:27.165 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----START delete file in folder----------
+[28-06-2024 08:48:27.168 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----END delete file in folder----------
+[28-06-2024 08:50:46.748 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----START delete file in folder----------
+[28-06-2024 08:50:46.751 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----END delete file in folder----------
+[28-06-2024 08:51:32.217 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - ---------------------- Passed -----------------------
+[28-06-2024 08:53:52.970 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----START delete file in folder----------
+[28-06-2024 08:53:52.974 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----END delete file in folder----------
+[28-06-2024 10:23:47.517 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----START delete file in folder----------
+[28-06-2024 10:23:47.520 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----END delete file in folder----------
+[28-06-2024 10:23:58.455 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - ---------------------- Passed -----------------------
+[28-06-2024 10:24:42.396 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - ---------------------- Passed -----------------------
+[28-06-2024 10:27:09.619 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----START delete file in folder----------
+[28-06-2024 10:27:09.622 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----END delete file in folder----------
+[28-06-2024 10:27:17.423 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - ---------------------- Passed -----------------------
+[28-06-2024 10:27:57.061 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - ---------------------- Passed -----------------------

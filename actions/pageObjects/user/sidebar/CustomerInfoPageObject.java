@@ -13,42 +13,42 @@ public class CustomerInfoPageObject extends SidebarPageObject {
     }
 
     public boolean isMaleDisplayed() {
-        waitForElementSelected(driver, CustomerInfoPageUI.GENDER_MALE_RADIO);
-        return isElementDisplayed(driver, CustomerInfoPageUI.GENDER_MALE_RADIO);
+        waitForElementSelected(CustomerInfoPageUI.GENDER_MALE_RADIO);
+        return isElementDisplayed(CustomerInfoPageUI.GENDER_MALE_RADIO);
     }
 
     public String getFirstNameTextboxValue() {
-        waitForElementVisible(driver, CustomerInfoPageUI.FIRST_NAME_TEXTBOX);
-        return getElementAttribute(driver, CustomerInfoPageUI.FIRST_NAME_TEXTBOX, "value");
+        waitForElementVisible(CustomerInfoPageUI.FIRST_NAME_TEXTBOX);
+        return getElementAttribute(CustomerInfoPageUI.FIRST_NAME_TEXTBOX, "value");
     }
 
     public String getLastNameTextboxValue() {
-        waitForElementVisible(driver, CustomerInfoPageUI.LAST_NAME_TEXTBOX);
-        return getElementAttribute(driver, CustomerInfoPageUI.LAST_NAME_TEXTBOX, "value");
+        waitForElementVisible(CustomerInfoPageUI.LAST_NAME_TEXTBOX);
+        return getElementAttribute(CustomerInfoPageUI.LAST_NAME_TEXTBOX, "value");
     }
 
     public String getDayDropdownSelectedValue() {
-        waitForElementClickable(driver, CustomerInfoPageUI.DAY_DROPDOWN);
-        return getSelectedItemInDropdown(driver, CustomerInfoPageUI.DAY_DROPDOWN);
+        waitForElementClickable(CustomerInfoPageUI.DAY_DROPDOWN);
+        return getSelectedItemInDropdown(CustomerInfoPageUI.DAY_DROPDOWN);
     }
 
     public String getMonthDropdownSelectedValue() {
-        waitForElementClickable(driver, CustomerInfoPageUI.MONTH_DROPDOWN);
-        return getSelectedItemInDropdown(driver, CustomerInfoPageUI.MONTH_DROPDOWN);
+        waitForElementClickable(CustomerInfoPageUI.MONTH_DROPDOWN);
+        return getSelectedItemInDropdown(CustomerInfoPageUI.MONTH_DROPDOWN);
     }
 
     public String getYearDropdownSelectedValue() {
-        waitForElementClickable(driver, CustomerInfoPageUI.YEAR_DROPDOWN);
-        return getSelectedItemInDropdown(driver, CustomerInfoPageUI.YEAR_DROPDOWN);
+        waitForElementClickable(CustomerInfoPageUI.YEAR_DROPDOWN);
+        return getSelectedItemInDropdown(CustomerInfoPageUI.YEAR_DROPDOWN);
     }
 
     public String getEmailTextboxValue() {
-        waitForElementVisible(driver, CustomerInfoPageUI.EMAIL_TEXTBOX);
-        return getElementAttribute(driver, CustomerInfoPageUI.EMAIL_TEXTBOX, "value");
+        waitForElementVisible(CustomerInfoPageUI.EMAIL_TEXTBOX);
+        return getElementAttribute(CustomerInfoPageUI.EMAIL_TEXTBOX, "value");
     }
 
     public String getCompanyTextboxValue() {
-        waitForElementVisible(driver, CustomerInfoPageUI.COMPANY_NAME_TEXTBOX);
-        return getElementAttribute(driver, CustomerInfoPageUI.COMPANY_NAME_TEXTBOX, "value");
+        waitForElementVisible(CustomerInfoPageUI.COMPANY_NAME_TEXTBOX);
+        return getElementAttribute(CustomerInfoPageUI.COMPANY_NAME_TEXTBOX, "value");
     }
 }

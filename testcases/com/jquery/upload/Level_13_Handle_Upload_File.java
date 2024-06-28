@@ -30,13 +30,13 @@ public class Level_13_Handle_Upload_File extends BaseTest {
 
     @Test
     public void TC_01_Single_Upload_File(){
-        uploadPage.uploadMultipleFiles(driver,image1);
+        uploadPage.uploadMultipleFiles(image1);
         uploadPage.sleepInSeconds(2);
 
-        uploadPage.uploadMultipleFiles(driver,image2);
+        uploadPage.uploadMultipleFiles(image2);
         uploadPage.sleepInSeconds(2);
 
-        uploadPage.uploadMultipleFiles(driver,image3);
+        uploadPage.uploadMultipleFiles(image3);
         uploadPage.sleepInSeconds(2);
 
         Assert.assertTrue(uploadPage.isFileLoadedSuccess(image1));
@@ -52,8 +52,8 @@ public class Level_13_Handle_Upload_File extends BaseTest {
 
     @Test
     public void TC_02_Multiple_Upload_File(){
-        uploadPage.refreshCurrentPage(driver);
-        uploadPage.uploadMultipleFiles(driver,multiFile);
+        uploadPage.refreshCurrentPage();
+        uploadPage.uploadMultipleFiles(multiFile);
 
         Assert.assertTrue(uploadPage.isFileLoadedSuccess(image1));
         Assert.assertTrue(uploadPage.isFileLoadedSuccess(image2));

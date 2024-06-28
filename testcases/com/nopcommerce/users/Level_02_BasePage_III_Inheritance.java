@@ -16,6 +16,10 @@ public class Level_02_BasePage_III_Inheritance extends BasePage {
 
     WebDriver driver;
 
+    public Level_02_BasePage_III_Inheritance(WebDriver driver) {
+        super(driver);
+    }
+
     @BeforeClass
     public void beforeClass() {
         driver = new ChromeDriver();
@@ -24,70 +28,71 @@ public class Level_02_BasePage_III_Inheritance extends BasePage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
 
+
     }
 
     @Test
     public void TC_01_Register() {
 
-        waitForElementClickable(driver, "//a[@class='ico-register']");
-        clickToElement(driver, "//a[@class='ico-register']");
+        waitForElementClickable("//a[@class='ico-register']");
+        clickToElement("//a[@class='ico-register']");
 
         //Đăng ký 1 tài khoản
-        sendkeyToElement(driver, "//input[@id='FirstName']", "Jasmine");
-        waitForElementClickable(driver, "//input[@id='gender-male']");
-        clickToElement(driver, "//input[@id='gender-male']");
-        sendkeyToElement(driver, "//input[@id='LastName']", "Tran");
-        selectItemInDropdown(driver, "//select[@name='DateOfBirthDay']", "10");
-        selectItemInDropdown(driver, "//select[@name='DateOfBirthMonth']", "May");
-        selectItemInDropdown(driver, "//select[@name='DateOfBirthYear']", "1999");
-        sendkeyToElement(driver, "//input[@id='Email']", "james" + getRandom() + "@gmail.com");
-        sendkeyToElement(driver, "//input[@id='Company']", "NEXTG");
-        sendkeyToElement(driver, "//input[@id='Password']", "abcde12345-");
-        sendkeyToElement(driver, "//input[@id='ConfirmPassword']", "abcde12345-");
-        waitForElementClickable(driver, "//button[@id='register-button']");
-        clickToElement(driver, "//button[@id='register-button']");
+        sendkeyToElement("//input[@id='FirstName']", "Jasmine");
+        waitForElementClickable("//input[@id='gender-male']");
+        clickToElement("//input[@id='gender-male']");
+        sendkeyToElement("//input[@id='LastName']", "Tran");
+        selectItemInDropdown("//select[@name='DateOfBirthDay']", "10");
+        selectItemInDropdown("//select[@name='DateOfBirthMonth']", "May");
+        selectItemInDropdown("//select[@name='DateOfBirthYear']", "1999");
+        sendkeyToElement("//input[@id='Email']", "james" + getRandom() + "@gmail.com");
+        sendkeyToElement("//input[@id='Company']", "NEXTG");
+        sendkeyToElement("//input[@id='Password']", "abcde12345-");
+        sendkeyToElement("//input[@id='ConfirmPassword']", "abcde12345-");
+        waitForElementClickable("//button[@id='register-button']");
+        clickToElement("//button[@id='register-button']");
 
         //Get Email vừa đăng ký
 
-        Assert.assertEquals(getElementText(driver, "//div[@class='result']"), "Your registration completed");
-        waitForElementClickable(driver, "//a[contains(@class,'register-continue-button')]");
-        clickToElement(driver, "//a[contains(@class,'register-continue-button')]");
-        waitForElementClickable(driver, "//a[@class='ico-account']");
-        clickToElement(driver, "//a[@class='ico-account']");
-        System.out.println(getElementAttribute(driver, "//input[@id='Email']", "value"));
+        Assert.assertEquals(getElementText("//div[@class='result']"), "Your registration completed");
+        waitForElementClickable("//a[contains(@class,'register-continue-button')]");
+        clickToElement("//a[contains(@class,'register-continue-button')]");
+        waitForElementClickable("//a[@class='ico-account']");
+        clickToElement("//a[@class='ico-account']");
+        System.out.println(getElementAttribute("//input[@id='Email']", "value"));
 
         //Logout
-        clickToElement(driver, "//a[@class='ico-logout']");
+        clickToElement("//a[@class='ico-logout']");
 
 
     }
 
     @Test
     public void TC_02_Login() {
-        waitForElementClickable(driver, "//a[@class='ico-login']");
-        clickToElement(driver, "//a[@class='ico-login']");
-        sendkeyToElement(driver, "//input[@id='Email']", "james59547@gmail.com");
-        sendkeyToElement(driver, "//input[@id='Password']", "abcde12345-");
-        waitForElementClickable(driver, "//button[contains(@class,'login-button')]");
-        clickToElement(driver, "//button[contains(@class,'login-button')]");
+        waitForElementClickable("//a[@class='ico-login']");
+        clickToElement("//a[@class='ico-login']");
+        sendkeyToElement("//input[@id='Email']", "james59547@gmail.com");
+        sendkeyToElement("//input[@id='Password']", "abcde12345-");
+        waitForElementClickable("//button[contains(@class,'login-button')]");
+        clickToElement("//button[contains(@class,'login-button')]");
         sleepInSeconds(2);
-        Assert.assertTrue(isElementDisplayed(driver, "//a[@class='ico-account']"));
+        Assert.assertTrue(isElementDisplayed("//a[@class='ico-account']"));
 
 
     }
 
     @Test
     public void TC_03_MyAccount() {
-        waitForElementClickable(driver, "//a[@class='ico-account']");
-        clickToElement(driver, "//a[@class='ico-account']");
-        Assert.assertTrue(isElementSelected(driver, "//input[@id='gender-male']"));
-        Assert.assertEquals(getElementAttribute(driver, "//input[@id='FirstName']", "value"), "Jasmine");
-        Assert.assertEquals(getElementAttribute(driver, "//input[@id='LastName']", "value"), "Tran");
-        Assert.assertEquals(getSelectedItemInDropdown(driver, "//select[@name='DateOfBirthDay']"), "10");
-        Assert.assertEquals(getSelectedItemInDropdown(driver, "//select[@name='DateOfBirthMonth']"), "May");
-        Assert.assertEquals(getSelectedItemInDropdown(driver, "//select[@name='DateOfBirthYear']"), "1999");
-        Assert.assertEquals(getElementAttribute(driver, "//input[@id='Email']", "value"), "james59547@gmail.com");
-        Assert.assertEquals(getElementAttribute(driver, "//input[@id='Company']", "value"), "NEXTG");
+        waitForElementClickable("//a[@class='ico-account']");
+        clickToElement("//a[@class='ico-account']");
+        Assert.assertTrue(isElementSelected("//input[@id='gender-male']"));
+        Assert.assertEquals(getElementAttribute("//input[@id='FirstName']", "value"), "Jasmine");
+        Assert.assertEquals(getElementAttribute("//input[@id='LastName']", "value"), "Tran");
+        Assert.assertEquals(getSelectedItemInDropdown("//select[@name='DateOfBirthDay']"), "10");
+        Assert.assertEquals(getSelectedItemInDropdown("//select[@name='DateOfBirthMonth']"), "May");
+        Assert.assertEquals(getSelectedItemInDropdown("//select[@name='DateOfBirthYear']"), "1999");
+        Assert.assertEquals(getElementAttribute("//input[@id='Email']", "value"), "james59547@gmail.com");
+        Assert.assertEquals(getElementAttribute("//input[@id='Company']", "value"), "NEXTG");
 
     }
 

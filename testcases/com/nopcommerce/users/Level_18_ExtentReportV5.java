@@ -20,11 +20,13 @@ import reportConfig.ExtentTestManager;
 import java.lang.reflect.Method;
 
 public class Level_18_ExtentReportV5 extends BaseTest {
+    String browserName;
     @Parameters({"browser"})
     @BeforeClass
     public void beforeClass(String browserName) {
         driver = getBrowserDriver(browserName, userUrl);
         homePage = PageGenerator.getHomePage(driver);
+        this.browserName = browserName;
 
         firstName = "Tran";
         lastName = "Thi";
@@ -39,7 +41,7 @@ public class Level_18_ExtentReportV5 extends BaseTest {
 
     @Test
     public void TC_01_Register_User_To_Admin(Method method) {
-        ExtentTestManager.startTest(method.getName(), "TC_01_Register_User_To_Admin");
+        ExtentTestManager.startTest(method.getName() + " - " + this.browserName.toUpperCase(), "TC_01_Register_User_To_Admin");
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 1: verify Register link is not displayed");
         Assert.assertTrue(homePage.isRegisterLinkDisplayed());
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 2: Click to Register link");
@@ -56,7 +58,7 @@ public class Level_18_ExtentReportV5 extends BaseTest {
 
     @Test
     public void TC_02(Method method){
-        ExtentTestManager.startTest(method.getName(), "TC_02");
+        ExtentTestManager.startTest(method.getName() + " - " + this.browserName.toUpperCase(), "TC_02");
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 7: Enter to First Name Textbox: " + firstName);
         registerPage.enterToFirstNameTextbox(firstName);
         ExtentTestManager.getTest().log(Status.INFO, "Register - Step 8: Enter to Last Name Textbox: " + lastName);
