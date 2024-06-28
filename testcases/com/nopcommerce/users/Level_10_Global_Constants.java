@@ -57,7 +57,7 @@ public class Level_10_Global_Constants extends BaseTest {
         homePage.openPageUrl(adminUrl);
         adminLoginPage = PageGenerator.getAdminLoginPage(driver);
         adminDashboardPage = adminLoginPage.loginToAdmin(GlobalConstants.DEV_ADMIN_USERNAME, GlobalConstants.DEV_ADMIN_PASSWORD);
-        Assert.assertTrue(adminDashboardPage.isPageLoadedSuccess(driver));
+        Assert.assertTrue(adminDashboardPage.isPageLoadedSuccess());
     }
 
     @Test

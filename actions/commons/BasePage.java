@@ -350,13 +350,13 @@ public class BasePage {
         WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
             @Override
-            public Boolean apply(WebDriver input) {
+            public Boolean apply(WebDriver driver) {
                 return (Boolean) ((JavascriptExecutor) driver).executeScript("return (window.jQuery!=null)&&(jQuery.active===0);");
             }
         };
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
             @Override
-            public Boolean apply(WebDriver input) {
+            public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
             }
         };
@@ -458,37 +458,18 @@ public class BasePage {
         return PageGenerator.getCustomerInfoPageObject(driver);
     }
 
-//    public Boolean isPageLoadedSuccess(WebDriver driver) {
-//        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
-//        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-//        ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
-//            @Override
-//            public Boolean apply() {
-//                return (Boolean) jsExecutor.executeScript("return (window.jQuery!=null)&&(jQuery.active===0);");
-//            }
-//        };
-//        ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
-//            @Override
-//            public Boolean apply() {
-//                return jsExecutor.executeScript("return document.readyState").toString().equals("complete");
-//            }
-//        };
-//        return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
-//
-//    }
-
         public Boolean isPageLoadedSuccess() {
         WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
             @Override
-            public Boolean apply(WebDriver input) {
+            public Boolean apply(WebDriver driver) {
                 return (Boolean) jsExecutor.executeScript("return (window.jQuery!=null)&&(jQuery.active===0);");
             }
         };
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
             @Override
-            public Boolean apply(WebDriver input) {
+            public Boolean apply(WebDriver driver) {
                 return jsExecutor.executeScript("return document.readyState").toString().equals("complete");
             }
         };
