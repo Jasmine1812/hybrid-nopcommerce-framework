@@ -3,19 +3,19 @@
 <suite name="NopCommerce Automation Testing" verbose="1">
     <listeners>
         <listener class-name="commons.MethodListener"></listener>
-        <listener class-name="reportConfig.ExtentTestListener"></listener>
+        <listener class-name="reportConfig.AllureTestListener"></listener>
     </listeners>
 
     <test name="Run on Chrome browser">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_18_ExtentReportV5"/>
+            <class name="com.nopcommerce.users.Level_19_Allure_Report"/>
         </classes>
     </test>
     <test name="Run on Firefox browser">
         <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_18_ExtentReportV5"/>
+            <class name="com.nopcommerce.users.Level_19_Allure_Report"/>
         </classes>
     </test>
 </suite>

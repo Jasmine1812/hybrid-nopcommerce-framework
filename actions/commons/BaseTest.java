@@ -125,12 +125,12 @@ public class BaseTest{
         log.info("-----END delete file in folder----------");
 
         // Remove all file in Allure attachment (json file)
-//        deleteAllFileInFolder("allure-json");
+        deleteAllFileInFolder("allure-json");
     }
 
     public void deleteAllFileInFolder(String folderName) {
         try {
-            String pathFolderDownload = GlobalConstants.REPORTNG_IMAGE_PATH;
+            String pathFolderDownload = GlobalConstants.RELATIVE_PROJECT_PATH + File.separator + folderName;
             File file = new File(pathFolderDownload);
             File[] listOfFiles = file.listFiles();
             if (listOfFiles.length != 0) {

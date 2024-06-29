@@ -75,3 +75,27 @@
 [28-06-2024 10:27:57.061 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - ---------------------- Passed -----------------------
 [28-06-2024 10:52:06.641 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----START delete file in folder----------
 [28-06-2024 10:52:06.644 INFO com.nopcommerce.users.Level_18_ExtentReportV5] - -----END delete file in folder----------
+[29-06-2024 16:53:47.147 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----START delete file in folder----------
+[29-06-2024 16:53:47.195 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----END delete file in folder----------
+[29-06-2024 16:54:26.045 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[29-06-2024 16:55:07.592 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 02:20:19.427 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----START delete file in folder----------
+[30-06-2024 02:20:19.436 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----END delete file in folder----------
+[30-06-2024 02:20:30.992 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 02:20:47.826 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 03:07:14.599 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----START delete file in folder----------
+[30-06-2024 03:07:14.621 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----END delete file in folder----------
+[30-06-2024 03:07:23.231 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 03:07:45.348 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 03:09:21.955 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----START delete file in folder----------
+[30-06-2024 03:09:21.974 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----END delete file in folder----------
+[30-06-2024 03:09:30.355 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 03:09:46.377 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 03:43:07.195 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----START delete file in folder----------
+[30-06-2024 03:43:07.212 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----END delete file in folder----------
+[30-06-2024 03:43:19.401 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 03:43:33.760 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 03:45:35.103 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----START delete file in folder----------
+[30-06-2024 03:45:35.134 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----END delete file in folder----------
+[30-06-2024 03:45:45.332 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[30-06-2024 03:46:00.586 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
