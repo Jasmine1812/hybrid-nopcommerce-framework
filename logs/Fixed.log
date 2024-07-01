@@ -99,3 +99,5 @@
 [30-06-2024 03:45:35.134 INFO com.nopcommerce.users.Level_19_Allure_Report] - -----END delete file in folder----------
 [30-06-2024 03:45:45.332 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
 [30-06-2024 03:46:00.586 INFO com.nopcommerce.users.Level_19_Allure_Report] - ---------------------- Passed -----------------------
+[01-07-2024 17:17:05.840 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----START delete file in folder----------
+[01-07-2024 17:17:05.847 INFO com.facebook.home.Level_20_Element_Undisplayed] - -----END delete file in folder----------

@@ -241,6 +241,22 @@ public class BasePage {
         return getElement(getDynamicLocator(locator, restParams)).isDisplayed();
     }
 
+    public void setImpicitWait(long timeOut){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeOut));
+    }
+    public boolean isElementUndisplayed(String locator){
+        setImpicitWait(shortTimeout);
+        List<WebElement> elements = getListElement(locator);
+        setImpicitWait(longTimeout);
+        if (elements.size() > 0 && elements.get(0).isDisplayed()){
+            return false;
+        } else if (elements.size() > 0 && !elements.get(0).isDisplayed()){
+            return true;
+        } else {
+            return true;
+        }
+    }
+
     public boolean isElementSelected(String locator) {
         return getElement(locator).isSelected();
     }
@@ -511,6 +527,7 @@ public class BasePage {
 
 
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
+    private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 
 
 }
