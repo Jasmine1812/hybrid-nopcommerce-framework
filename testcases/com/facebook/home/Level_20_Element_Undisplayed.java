@@ -31,11 +31,16 @@ public class Level_20_Element_Undisplayed extends BaseTest {
     @Test
     public void Home_02_Element_Undisplayed_In_HTML() {
         homePageFacebook.enterToEmailTextbox("");
-        verifyTrue(homePageFacebook.isConfirmEmailTextboxDisplayed());
+        verifyTrue(homePageFacebook.isConfirmEmailTextboxUndisplayed());
     }
 
     @Test
     public void Home_03_Element_Undisplayed_Not_In_HTML() {
+        homePageFacebook.clickToSignUpIcon();
+        verifyTrue(homePageFacebook.isFirstNameTextboxUndisplayed());
+        verifyTrue(homePageFacebook.isLastNameTextboxUndisplayed());
+        verifyTrue(homePageFacebook.isPasswordTextboxUndisplayed());
+        verifyTrue(homePageFacebook.isEmailTextboxUndisplayed());
     }
 
 

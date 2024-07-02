@@ -39,6 +39,7 @@ public class HomePageFacebookObject extends BasePage {
     public void clickToSignUpIcon() {
         waitForElementClickable(HomePageFacebookUI.CLOSE_SIGN_UP_FORM_ICON);
         clickToElement(HomePageFacebookUI.CLOSE_SIGN_UP_FORM_ICON);
+        sleepInSeconds(2);
     }
 
     public boolean isConfirmEmailTextboxDisplayed() {
@@ -69,5 +70,6 @@ public class HomePageFacebookObject extends BasePage {
     public void enterToEmailTextbox(String email) {
         waitForElementClickable(HomePageFacebookUI.EMAIL_TEXTBOX);
         sendkeyToElement(HomePageFacebookUI.EMAIL_TEXTBOX, email);
+        sleepInSeconds(2);
      }
 }
