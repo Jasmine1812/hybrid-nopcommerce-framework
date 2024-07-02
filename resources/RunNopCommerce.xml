@@ -9,13 +9,8 @@
     <test name="Run on Chrome browser">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_19_Allure_Report"/>
+            <class name="com.nopcommerce.users.Level_21_Patter_Object"/>
         </classes>
     </test>
-    <test name="Run on Firefox browser">
-        <parameter name="browser" value="firefox"></parameter>
-        <classes>
-            <class name="com.nopcommerce.users.Level_19_Allure_Report"/>
-        </classes>
-    </test>
+
 </suite>

@@ -1,5 +1,6 @@
 package pageObjects.user;
 
+import commons.BaseElement;
 import commons.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +8,7 @@ import pageObjects.PageGenerator;
 import pageObjects.user.sidebar.CustomerInfoPageObject;
 import pageUIs.users.HomePageUI;
 
-public class HomePageObject extends BasePage {
+public class HomePageObject extends BaseElement {
     private WebDriver driver;
 
     public HomePageObject(WebDriver driver) {

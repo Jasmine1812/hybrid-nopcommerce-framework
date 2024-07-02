@@ -1,12 +1,13 @@
 package pageObjects.user;
 
+import commons.BaseElement;
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
 import pageObjects.PageGenerator;
 import pageObjects.user.sidebar.*;
 import pageUIs.users.SidebarPageUI;
 
-public class SidebarPageObject extends BasePage {
+public class SidebarPageObject extends BaseElement {
     private WebDriver driver;
 
     public SidebarPageObject(WebDriver driver) {

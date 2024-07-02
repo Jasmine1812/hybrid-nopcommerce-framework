@@ -1,12 +1,13 @@
 package pageObjects.user;
 
+import commons.BaseElement;
 import commons.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pageObjects.PageGenerator;
 import pageUIs.users.RegisterPageUI;
 
-public class RegisterPageObject extends BasePage {
+public class RegisterPageObject extends BaseElement {
     private WebDriver driver;
 
     public RegisterPageObject(WebDriver driver) {
