@@ -332,6 +332,9 @@ public class BasePage {
     public void scrollToBottomPageByJS() {
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
+    public void closeBrowser(){
+        driver.close();
+    }
 
     public void scrollToElementByJS(String locator) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getElement(locator));
