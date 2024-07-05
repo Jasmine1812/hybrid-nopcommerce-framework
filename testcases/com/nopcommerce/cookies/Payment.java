@@ -1,4 +1,4 @@
-package com.nopcommerce.share;
+package com.nopcommerce.cookies;
 
 
 import commons.BaseTest;
@@ -28,15 +28,11 @@ public class Payment extends BaseTest {
         driver = getBrowserDriver(browserName);
         homePage = PageGenerator.getHomePage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-        homePage.clickToHeaderLinkByText("Log in");
-        loginPage = PageGenerator.getUserLoginPage(driver);
-        loginPage.enterToEmailTextbox(Common_Register.email);
-        loginPage.enterToPasswordTextbox(Common_Register.password);
-        loginPage.clickToButtonByText("Log in");
+        loginPage = homePage.clickToLoginLink();
+        loginPage.setCookies(Common_Register.cookies);
+        loginPage.sleepInSeconds(5);
+        loginPage.refreshCurrentPage();
         Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
-        System.out.println("Email on Payment page: " + Common_Register.email);
-        System.out.println("Pass on Payment page: " + Common_Register.password);
     }
 
 
@@ -48,8 +44,8 @@ public class Payment extends BaseTest {
     public void Payment_02() {
     }
 
-    @AfterClass(alwaysRun = true)
+    @AfterClass (alwaysRun = true)
     public void afterClass() {
-        driver.quit();
+        closeBrowserDriver();
     }
 }

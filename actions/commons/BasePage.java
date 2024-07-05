@@ -332,9 +332,7 @@ public class BasePage {
     public void scrollToBottomPageByJS() {
         ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
-    public void closeBrowser(){
-        driver.close();
-    }
+
 
     public void scrollToElementByJS(String locator) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getElement(locator));
@@ -526,6 +524,20 @@ public class BasePage {
         }
         fullFileName = fullFileName.trim();
         getElement(BasePageUI.UPLOAD_FILE).sendKeys(fullFileName);
+    }
+
+    public Set<Cookie> getBrowserCookies(){
+        return driver.manage().getCookies();
+    }
+
+    public void setCookies(Set<Cookie> cookies){
+        for (Cookie cookie: cookies){
+            driver.manage().addCookie(cookie);
+        }
+    }
+
+    public void deleteAllCookies(){
+        driver.manage().deleteAllCookies();
     }
 
 

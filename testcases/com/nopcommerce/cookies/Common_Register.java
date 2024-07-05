@@ -1,17 +1,15 @@
-package com.nopcommerce.share;
+package com.nopcommerce.cookies;
 
 
 import commons.BaseTest;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
-import org.zeromq.ZStar;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import pageObjects.PageGenerator;
 import pageObjects.user.HomePageObject;
 import pageObjects.user.RegisterPageObject;
-import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.sidebar.CustomerInfoPageObject;
 
 import java.time.Duration;
 import java.util.Set;
@@ -24,8 +22,7 @@ public class Common_Register extends BaseTest {
 
     public static String firstName, lastName, day, month, year, email, company, password, confirmPassword;
 
-
-
+    public static Set<Cookie> cookies;
     @Parameters({"browser" })
     @BeforeTest
     public void beforeClass(String browserName) {
@@ -55,9 +52,9 @@ public class Common_Register extends BaseTest {
         registerPage.enterToTextboxByID("Password", password);
         registerPage.enterToTextboxByID("ConfirmPassword", confirmPassword);
         registerPage.clickToButtonByText("Register");
-        Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
-        registerPage.clickToHeaderLinkByText("Log out");
-        homePage = PageGenerator.getHomePage(driver);
+        Assert.assertEquals(registerPage.getRegisterSuccessMessage(), ".Your registration completed");
+        cookies = registerPage.getBrowserCookies();
+        System.out.println(cookies);
     }
 
 

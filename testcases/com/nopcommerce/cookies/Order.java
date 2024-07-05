@@ -1,16 +1,16 @@
-package com.nopcommerce.share;
+package com.nopcommerce.cookies;
 
 
-import com.nopcommerce.cookies.Common_Register;
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import pageObjects.PageGenerator;
 import pageObjects.user.HomePageObject;
-import pageObjects.user.RegisterPageObject;
 import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.sidebar.CustomerInfoPageObject;
 
 import java.time.Duration;
 
@@ -24,19 +24,14 @@ public class Order extends BaseTest {
     @Parameters({"browser"})
     @BeforeClass
     public void beforeClass(String browserName) {
-         driver = getBrowserDriver(browserName);
+        driver = getBrowserDriver(browserName);
         homePage = PageGenerator.getHomePage(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
-        homePage.clickToHeaderLinkByText("Log in");
-        loginPage = PageGenerator.getUserLoginPage(driver);
-        loginPage.enterToEmailTextbox(com.nopcommerce.share.Common_Register.email);
-        loginPage.enterToPasswordTextbox(com.nopcommerce.share.Common_Register.password);
-        loginPage.clickToButtonByText("Log in");
+        loginPage = homePage.clickToLoginLink();
+        loginPage.setCookies(Common_Register.cookies);
+        loginPage.sleepInSeconds(5);
+        loginPage.refreshCurrentPage();
         Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
-        System.out.println("Email on Order page: " + Common_Register.email);
-        System.out.println("Pass on Order page: " + Common_Register.password);
-
     }
 
 
@@ -50,6 +45,6 @@ public class Order extends BaseTest {
 
     @AfterClass
     public void afterClass() {
-        driver.quit();
+        closeBrowserDriver();
     }
 }
