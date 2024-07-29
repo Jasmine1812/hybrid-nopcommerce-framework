@@ -6,12 +6,12 @@
 <!--        <listener class-name="reportConfig.AllureTestListener"></listener>-->
     </listeners>
 
-<!--    <test name="Run on Chrome browser">-->
-<!--        <parameter name="browser" value="CHROME"></parameter>-->
-<!--        <classes>-->
-<!--            <class name="com.nopcommerce.users.Level_22_ConfigBrowser"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Run on Chrome browser">
+        <parameter name="browser" value="CHROME"></parameter>
+        <classes>
+            <class name="com.nopcommerce.users.Level_22_ConfigBrowser"/>
+        </classes>
+    </test>
 
     <test name="Run on Firefox browser">
         <parameter name="browser" value="FIREFOX"></parameter>

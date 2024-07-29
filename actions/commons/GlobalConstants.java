@@ -16,4 +16,5 @@ public class GlobalConstants {
     public static final long LONG_TIMEOUT = 30;
     public static final String JAVA_VERSION = System.getProperty("java.version");
     public static final String BROWSER_EXTENSION = RELATIVE_PROJECT_PATH + File.separator + "browserExtensions" + File.separator;
+    public static final String BROWSER_LOG = RELATIVE_PROJECT_PATH + File.separator + "browserLogs" + File.separator;
 }

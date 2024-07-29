@@ -4,10 +4,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriverService;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.GeckoDriverService;
 import org.testng.Assert;
 import org.testng.ITestNGListener;
 import org.testng.ITestNGMethod;
@@ -66,34 +69,16 @@ public class BaseTest{
         File extensionFilePath = null;
         switch (browserList) {
             case FIREFOX:
-                driver = new FirefoxDriver();
-                Path xpiPath = Paths.get(GlobalConstants.BROWSER_EXTENSION + "wappalyzer.xpi");
-                FirefoxDriver ffDriver = (FirefoxDriver) driver;
-                ffDriver.installExtension(xpiPath);
-                driver = ffDriver;
+                FirefoxDriverService fService = new GeckoDriverService.Builder().withLogFile(new File(GlobalConstants.BROWSER_LOG + "FirefoxLog.log")).build();
+                driver = new FirefoxDriver(fService);
                 break;
             case CHROME:
-                ChromeOptions chromeOptions = new ChromeOptions();
-                path = Paths.get(GlobalConstants.BROWSER_EXTENSION + "wappalyzer.crx");
-                extensionFilePath = new File(path.toUri());
-                chromeOptions.addExtensions(extensionFilePath);
-                driver = new ChromeDriver(chromeOptions);
+                ChromeDriverService chromeDriverService = new ChromeDriverService.Builder().withLogFile(new File(GlobalConstants.BROWSER_LOG + "ChromeLog.log")).build();
+                driver = new ChromeDriver(chromeDriverService);
                 break;
             case EDGE:
                 driver = new EdgeDriver();
                 break;
-//            case CHROME_HEADLESS:
-//                ChromeOptions chromeOptions = new ChromeOptions();
-//                chromeOptions.addArguments("--headless");
-//                chromeOptions.addArguments("window-size=1366x768");
-//                driver = new ChromeDriver(chromeOptions);
-//                break;
-//            case FIREFOX_HEADLESS:
-//                FirefoxOptions ffOptions = new FirefoxOptions();
-//                ffOptions.addArguments("--headless");
-//                ffOptions.addArguments("window-size=1366x768");
-//                driver = new FirefoxDriver(ffOptions);
-//                break;
             default:
                 throw new RuntimeException("Browser name is not valid");
         }
