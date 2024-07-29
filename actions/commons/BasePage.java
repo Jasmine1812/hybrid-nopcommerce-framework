@@ -380,17 +380,8 @@ public class BasePage {
         return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
     }
 
-    public void checkCheckboxByJS(String locator) {
-        if (!getElement(locator).isSelected()) {
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", getElement(locator));
-        }
-    }
 
-    public void uncheckCheckboxByJS(String locator) {
-        if (getElement(locator).isSelected()) {
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", getElement(locator));
-        }
-    }
+
 
     public void waitForElementVisible(String locator) {
         new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
@@ -475,7 +466,7 @@ public class BasePage {
         return PageGenerator.getCustomerInfoPageObject(driver);
     }
 
-        public Boolean isPageLoadedSuccess() {
+    public Boolean isPageLoadedSuccess() {
         WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(longTimeout));
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {

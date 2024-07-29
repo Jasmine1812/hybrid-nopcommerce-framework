@@ -171,3 +171,9 @@
 [06-07-2024 02:00:34.555 INFO com.nopcommerce.cookies.Common_Register] - -----END delete file in folder----------
 [06-07-2024 02:00:48.101 INFO com.nopcommerce.cookies.Payment] - OS name = windows 10
 [06-07-2024 02:00:48.103 INFO com.nopcommerce.cookies.Payment] - Cannot invoke "Object.toString()" because "this.driver" is null
+[29-07-2024 06:02:12.773 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----START delete file in folder----------
+[29-07-2024 06:02:12.779 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----END delete file in folder----------
+[29-07-2024 06:03:29.624 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----START delete file in folder----------
+[29-07-2024 06:03:29.632 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----END delete file in folder----------
+[29-07-2024 06:04:47.695 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----START delete file in folder----------
+[29-07-2024 06:04:47.703 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----END delete file in folder----------

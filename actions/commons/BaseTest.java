@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -47,7 +48,7 @@ public class BaseTest{
             case EDGE:
                 driver = new EdgeDriver();
                 break;
-            default:
+               default:
                 throw new RuntimeException("Browser name is not valid");
         }
         driver.get(url);
@@ -67,6 +68,12 @@ public class BaseTest{
                 break;
             case EDGE:
                 driver = new EdgeDriver();
+                break;
+            case CHROME_HEADLESS:
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("window-size=1366x768");
+                driver = new ChromeDriver(chromeOptions);
                 break;
             default:
                 throw new RuntimeException("Browser name is not valid");

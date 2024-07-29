@@ -7,9 +7,9 @@
     </listeners>
 
     <test name="Run on Chrome browser">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="CHROME_HEADLESS"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_21_Patter_Object"/>
+            <class name="com.nopcommerce.users.Level_22_ConfigBrowser"/>
         </classes>
     </test>
 
