@@ -69,11 +69,11 @@ public class BaseTest{
         File extensionFilePath = null;
         switch (browserList) {
             case FIREFOX:
-                FirefoxDriverService fService = new GeckoDriverService.Builder().withLogFile(new File(GlobalConstants.BROWSER_LOG + "FirefoxLog.log")).build();
+                FirefoxDriverService fService = new GeckoDriverService.Builder().withLogOutput(System.out).build();
                 driver = new FirefoxDriver(fService);
                 break;
             case CHROME:
-                ChromeDriverService chromeDriverService = new ChromeDriverService.Builder().withLogFile(new File(GlobalConstants.BROWSER_LOG + "ChromeLog.log")).build();
+                ChromeDriverService chromeDriverService = new ChromeDriverService.Builder().withLogOutput(System.out).build();
                 driver = new ChromeDriver(chromeDriverService);
                 break;
             case EDGE:
