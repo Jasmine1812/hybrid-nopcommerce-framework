@@ -16,6 +16,8 @@ import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.Locale;
 import java.util.Random;
@@ -60,28 +62,38 @@ public class BaseTest{
 
     protected WebDriver getBrowserDriver(String browserName){
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+        Path path = null;
+        File extensionFilePath = null;
         switch (browserList) {
             case FIREFOX:
                 driver = new FirefoxDriver();
+                Path xpiPath = Paths.get(GlobalConstants.BROWSER_EXTENSION + "wappalyzer.xpi");
+                FirefoxDriver ffDriver = (FirefoxDriver) driver;
+                ffDriver.installExtension(xpiPath);
+                driver = ffDriver;
                 break;
             case CHROME:
-                driver = new ChromeDriver();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                path = Paths.get(GlobalConstants.BROWSER_EXTENSION + "wappalyzer.crx");
+                extensionFilePath = new File(path.toUri());
+                chromeOptions.addExtensions(extensionFilePath);
+                driver = new ChromeDriver(chromeOptions);
                 break;
             case EDGE:
                 driver = new EdgeDriver();
                 break;
-            case CHROME_HEADLESS:
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--headless");
-                chromeOptions.addArguments("window-size=1366x768");
-                driver = new ChromeDriver(chromeOptions);
-                break;
-            case FIREFOX_HEADLESS:
-                FirefoxOptions ffOptions = new FirefoxOptions();
-                ffOptions.addArguments("--headless");
-                ffOptions.addArguments("window-size=1366x768");
-                driver = new FirefoxDriver(ffOptions);
-                break;
+//            case CHROME_HEADLESS:
+//                ChromeOptions chromeOptions = new ChromeOptions();
+//                chromeOptions.addArguments("--headless");
+//                chromeOptions.addArguments("window-size=1366x768");
+//                driver = new ChromeDriver(chromeOptions);
+//                break;
+//            case FIREFOX_HEADLESS:
+//                FirefoxOptions ffOptions = new FirefoxOptions();
+//                ffOptions.addArguments("--headless");
+//                ffOptions.addArguments("window-size=1366x768");
+//                driver = new FirefoxDriver(ffOptions);
+//                break;
             default:
                 throw new RuntimeException("Browser name is not valid");
         }
