@@ -6,8 +6,15 @@
         <listener class-name="reportConfig.AllureTestListener"></listener>
     </listeners>
 
-    <test name="Run on Chrome browser">
+    <test name="Run on Chrome headless browser">
         <parameter name="browser" value="CHROME_HEADLESS"></parameter>
+        <classes>
+            <class name="com.nopcommerce.users.Level_22_ConfigBrowser"/>
+        </classes>
+    </test>
+
+    <test name="Run on Firefox headless browser">
+        <parameter name="browser" value="FIREFOX_HEADLESS"></parameter>
         <classes>
             <class name="com.nopcommerce.users.Level_22_ConfigBrowser"/>
         </classes>
