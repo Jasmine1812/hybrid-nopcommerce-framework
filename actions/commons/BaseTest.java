@@ -68,12 +68,12 @@ public class BaseTest{
         switch (browserList) {
             case FIREFOX:
                 FirefoxOptions ffOptions = new FirefoxOptions();
-                ffOptions.addPreference("intl.accept_languages","vi-vn,vi");
+                ffOptions.addArguments("-private");
                 driver = new FirefoxDriver(ffOptions);
                 break;
             case CHROME:
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--lang=vi");
+                chromeOptions.addArguments("--incognito");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case EDGE:
