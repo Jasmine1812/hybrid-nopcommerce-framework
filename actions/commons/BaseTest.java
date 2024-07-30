@@ -65,16 +65,16 @@ public class BaseTest{
 
     protected WebDriver getBrowserDriver(String browserName){
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
-        Path path = null;
-        File extensionFilePath = null;
         switch (browserList) {
             case FIREFOX:
-                FirefoxDriverService fService = new GeckoDriverService.Builder().withLogOutput(System.out).build();
-                driver = new FirefoxDriver(fService);
+                FirefoxOptions ffOptions = new FirefoxOptions();
+                ffOptions.addPreference("intl.accept_languages","vi-vn,vi");
+                driver = new FirefoxDriver(ffOptions);
                 break;
             case CHROME:
-                ChromeDriverService chromeDriverService = new ChromeDriverService.Builder().withLogOutput(System.out).build();
-                driver = new ChromeDriver(chromeDriverService);
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--lang=vi");
+                driver = new ChromeDriver(chromeOptions);
                 break;
             case EDGE:
                 driver = new EdgeDriver();
