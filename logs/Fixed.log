@@ -177,3 +177,11 @@
 [29-07-2024 06:03:29.632 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----END delete file in folder----------
 [29-07-2024 06:04:47.695 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----START delete file in folder----------
 [29-07-2024 06:04:47.703 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----END delete file in folder----------
+[03-08-2024 23:05:02.299 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----START delete file in folder----------
+[03-08-2024 23:05:02.306 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----END delete file in folder----------
+[03-08-2024 23:14:26.975 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----START delete file in folder----------
+[03-08-2024 23:14:26.985 INFO com.nopcommerce.users.Level_22_ConfigBrowser] - -----END delete file in folder----------
+[11-08-2024 05:54:35.805 INFO com.nopcommerce.users.Level_23_FakerDataTest] - -----START delete file in folder----------
+[11-08-2024 05:54:35.816 INFO com.nopcommerce.users.Level_23_FakerDataTest] - -----END delete file in folder----------
+[11-08-2024 05:55:50.528 INFO com.nopcommerce.users.Level_23_FakerDataTest] - OS name = windows 10
+[11-08-2024 05:55:50.530 INFO com.nopcommerce.users.Level_23_FakerDataTest] - Driver instance name = chromedriver: chrome on windows (fed2c6cab5713651c8711985c2fa5992)

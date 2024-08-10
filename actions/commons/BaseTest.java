@@ -67,14 +67,17 @@ public class BaseTest{
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
         switch (browserList) {
             case FIREFOX:
-                FirefoxOptions ffOptions = new FirefoxOptions();
-                ffOptions.addArguments("-private");
-                driver = new FirefoxDriver(ffOptions);
+//                FirefoxOptions ffOptions = new FirefoxOptions();
+//                ffOptions.addArguments("-private");
+//                driver = new FirefoxDriver(ffOptions);
+                driver = new FirefoxDriver();
                 break;
             case CHROME:
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--incognito");
-                driver = new ChromeDriver(chromeOptions);
+//                ChromeOptions chromeOptions = new ChromeOptions();
+//                chromeOptions.addArguments("--user-data-dir=C:/Users/Admin/AppData/Local/Google/Chrome/User Data/");
+//                chromeOptions.addArguments("--profile-directory=Profile 11");
+//                driver = new ChromeDriver(chromeOptions);
+                driver = new ChromeDriver();
                 break;
             case EDGE:
                 driver = new EdgeDriver();
