@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
     <line>
       <![CDATA[-----START delete file in folder----------]]>
@@ -7,106 +7,13 @@
     <line>
       <![CDATA[-----END delete file in folder----------]]>
     </line>
-    <line>
-      <![CDATA[---------------------- Passed -----------------------]]>
-    </line>
-    <line>
-      <![CDATA[---------------------- Passed -----------------------]]>
-    </line>
   </reporter-output>
-  <suite started-at="2024-06-28T10:27:09 ICT" name="NopCommerce Automation Testing" finished-at="2024-06-28T10:28:03 ICT" duration-ms="54156">
+  <suite started-at="2024-08-02T18:32:24 ICT" name="NopCommerce Automation Testing" finished-at="2024-08-02T18:32:27 ICT" duration-ms="2390">
     <groups>
     </groups>
-    <test started-at="2024-06-28T10:27:09 ICT" name="Run on Chrome browser" finished-at="2024-06-28T10:27:19 ICT" duration-ms="9914">
-      <class name="com.nopcommerce.users.Level_18_ExtentReportV5">
-        <test-method is-config="true" signature="beforeClass(java.lang.String)[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@4b40f651]" started-at="2024-06-28T10:27:09 ICT" name="beforeClass" finished-at="2024-06-28T10:27:16 ICT" duration-ms="6409" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="TC_01_Register_User_To_Admin(java.lang.reflect.Method)[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@4b40f651]" started-at="2024-06-28T10:27:16 ICT" name="TC_01_Register_User_To_Admin" finished-at="2024-06-28T10:27:17 ICT" duration-ms="1400" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.nopcommerce.users.Level_18_ExtentReportV5.TC_01_Register_User_To_Admin(java.lang.reflect.Method)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[---------------------- Passed -----------------------]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_01_Register_User_To_Admin -->
-        <test-method signature="TC_02(java.lang.reflect.Method)[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@4b40f651]" started-at="2024-06-28T10:27:17 ICT" name="TC_02" finished-at="2024-06-28T10:27:18 ICT" duration-ms="1282" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.nopcommerce.users.Level_18_ExtentReportV5.TC_02(java.lang.reflect.Method)]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Your registration completed.] but found [Your registration completed]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Your registration completed.] but found [Your registration completed]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at com.nopcommerce.users.Level_18_ExtentReportV5.TC_02(Level_18_ExtentReportV5.java:83)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
-at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_02 -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@4b40f651]" started-at="2024-06-28T10:27:18 ICT" name="afterClass" finished-at="2024-06-28T10:27:19 ICT" duration-ms="673" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.nopcommerce.users.Level_18_ExtentReportV5 -->
-    </test> <!-- Run on Chrome browser -->
-    <test started-at="2024-06-28T10:27:19 ICT" name="Run on Firefox browser" finished-at="2024-06-28T10:28:03 ICT" duration-ms="44011">
-      <class name="com.nopcommerce.users.Level_18_ExtentReportV5">
-        <test-method is-config="true" signature="deleteFileInReport()[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@73194df]" started-at="2024-06-28T10:27:09 ICT" name="deleteFileInReport" finished-at="2024-06-28T10:27:09 ICT" duration-ms="12" status="PASS">
+    <test started-at="2024-08-02T18:32:24 ICT" name="Run on Chrome browser" finished-at="2024-08-02T18:32:27 ICT" duration-ms="2390">
+      <class name="com.nopcommerce.users.Level_22_ConfigBrowser">
+        <test-method is-config="true" signature="deleteFileInReport()[pri:0, instance:com.nopcommerce.users.Level_22_ConfigBrowser@45cff11c]" started-at="2024-08-02T18:32:24 ICT" name="deleteFileInReport" finished-at="2024-08-02T18:32:24 ICT" duration-ms="19" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[-----START delete file in folder----------]]>
@@ -116,64 +23,57 @@ at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
             </line>
           </reporter-output>
         </test-method> <!-- deleteFileInReport -->
-        <test-method is-config="true" signature="beforeClass(java.lang.String)[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@73194df]" started-at="2024-06-28T10:27:19 ICT" name="beforeClass" finished-at="2024-06-28T10:27:55 ICT" duration-ms="35747" status="PASS">
+        <test-method is-config="true" signature="beforeClass(java.lang.String)[pri:0, instance:com.nopcommerce.users.Level_22_ConfigBrowser@45cff11c]" started-at="2024-08-02T18:32:24 ICT" name="beforeClass" finished-at="2024-08-02T18:32:27 ICT" duration-ms="2295" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="TC_01_Register_User_To_Admin(java.lang.reflect.Method)[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@73194df]" started-at="2024-06-28T10:27:55 ICT" name="TC_01_Register_User_To_Admin" finished-at="2024-06-28T10:27:57 ICT" duration-ms="1563" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.nopcommerce.users.Level_18_ExtentReportV5.TC_01_Register_User_To_Admin(java.lang.reflect.Method)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[---------------------- Passed -----------------------]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- TC_01_Register_User_To_Admin -->
-        <test-method signature="TC_02(java.lang.reflect.Method)[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@73194df]" started-at="2024-06-28T10:27:57 ICT" name="TC_02" finished-at="2024-06-28T10:27:58 ICT" duration-ms="1544" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.nopcommerce.users.Level_18_ExtentReportV5.TC_02(java.lang.reflect.Method)]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[expected [Your registration completed.] but found [Your registration completed]]]>
+              <![CDATA[Could not start a new session. Response code 500. Message: session not created
+from unknown error: failed to write prefs file 
+Host info: host: 'WDSC300000020', ip: '172.27.184.118'
+Build info: version: '4.18.0', revision: 'b6bf9de7cc'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--user-data-dir=C:/Users/Ad..., --profile-directory=Profile 8], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Your registration completed.] but found [Your registration completed]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at com.nopcommerce.users.Level_18_ExtentReportV5.TC_02(Level_18_ExtentReportV5.java:83)
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: failed to write prefs file 
+Host info: host: 'WDSC300000020', ip: '172.27.184.118'
+Build info: version: '4.18.0', revision: 'b6bf9de7cc'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--user-data-dir=C:/Users/Ad..., --profile-directory=Profile 8], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:139)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:95)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:233)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:162)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+at commons.BaseTest.getBrowserDriver(BaseTest.java:78)
+at com.nopcommerce.users.Level_22_ConfigBrowser.beforeClass(Level_22_ConfigBrowser.java:34)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:819)
 at org.testng.TestRunner.run(TestRunner.java:619)
@@ -191,15 +91,80 @@ at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
 at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC_02 -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.nopcommerce.users.Level_18_ExtentReportV5@73194df]" started-at="2024-06-28T10:27:58 ICT" name="afterClass" finished-at="2024-06-28T10:28:03 ICT" duration-ms="5080" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="TC_01_Register()[pri:0, instance:com.nopcommerce.users.Level_22_ConfigBrowser@45cff11c]" started-at="2024-08-02T18:32:27 ICT" name="TC_01_Register" finished-at="2024-08-02T18:32:27 ICT" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: session not created
+from unknown error: failed to write prefs file 
+Host info: host: 'WDSC300000020', ip: '172.27.184.118'
+Build info: version: '4.18.0', revision: 'b6bf9de7cc'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--user-data-dir=C:/Users/Ad..., --profile-directory=Profile 8], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from unknown error: failed to write prefs file 
+Host info: host: 'WDSC300000020', ip: '172.27.184.118'
+Build info: version: '4.18.0', revision: 'b6bf9de7cc'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--user-data-dir=C:/Users/Ad..., --profile-directory=Profile 8], binary: C:\Program Files\Google\Chr..., extensions: []}}]}]
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:139)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:95)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:162)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:233)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:162)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:114)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:89)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:84)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:73)
+at commons.BaseTest.getBrowserDriver(BaseTest.java:78)
+at com.nopcommerce.users.Level_22_ConfigBrowser.beforeClass(Level_22_ConfigBrowser.java:34)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:393)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:326)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
+at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_01_Register -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.nopcommerce.users.Level_22_ConfigBrowser@45cff11c]" started-at="2024-08-02T18:32:27 ICT" name="afterClass" finished-at="2024-08-02T18:32:27 ICT" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- com.nopcommerce.users.Level_18_ExtentReportV5 -->
-    </test> <!-- Run on Firefox browser -->
+      </class> <!-- com.nopcommerce.users.Level_22_ConfigBrowser -->
+    </test> <!-- Run on Chrome browser -->
   </suite> <!-- NopCommerce Automation Testing -->
 </testng-results>

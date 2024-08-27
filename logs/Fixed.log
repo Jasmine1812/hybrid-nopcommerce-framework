@@ -185,3 +185,37 @@
 [11-08-2024 05:54:35.816 INFO com.nopcommerce.users.Level_23_FakerDataTest] - -----END delete file in folder----------
 [11-08-2024 05:55:50.528 INFO com.nopcommerce.users.Level_23_FakerDataTest] - OS name = windows 10
 [11-08-2024 05:55:50.530 INFO com.nopcommerce.users.Level_23_FakerDataTest] - Driver instance name = chromedriver: chrome on windows (fed2c6cab5713651c8711985c2fa5992)
+[27-08-2024 15:24:04.105 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 15:24:04.108 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 15:25:48.529 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 15:25:48.532 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 15:26:29.446 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
+[27-08-2024 15:26:29.447 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (c09a79cd823c1296f2344d17859be1c4)
+[27-08-2024 15:33:36.098 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 15:33:36.101 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 15:33:52.432 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
+[27-08-2024 15:33:52.432 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (86259d17e99d186e029b4bf2d643861e)
+[27-08-2024 15:34:40.381 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 15:34:40.384 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 15:34:46.616 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
+[27-08-2024 15:34:46.616 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (d556f170183901418016cc35f0ad25e0)
+[27-08-2024 16:04:15.322 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 16:04:15.325 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 16:04:35.052 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
+[27-08-2024 16:04:35.052 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (eb35846ad650296168f2c8a6c429a234)
+[27-08-2024 16:07:30.072 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 16:07:30.075 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 16:07:36.409 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
+[27-08-2024 16:07:36.410 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (2f8b8ab78440d257d00e86ef6ffc1ff1)
+[27-08-2024 16:21:12.695 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 16:21:12.698 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 16:21:19.136 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
+[27-08-2024 16:21:19.136 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (f3645e5b754cbdc7b93bf787e308c363)
+[27-08-2024 16:43:29.012 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 16:43:29.015 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 16:43:51.502 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
+[27-08-2024 16:43:51.503 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (56d72794ce63f582b6b21ea715c311a9)
+[27-08-2024 16:45:22.141 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----START delete file in folder----------
+[27-08-2024 16:45:22.144 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
+[27-08-2024 16:45:29.121 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
+[27-08-2024 16:45:29.121 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (1ed7942c91d2729fdde500b3812ac3fd)

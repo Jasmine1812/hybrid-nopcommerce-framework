@@ -68,11 +68,8 @@ public class Level_22_ConfigBrowser extends BaseTest {
 
     }
 
-
-
     @AfterClass
     public void afterClass() {
-
-//        driver.quit();
+        driver.quit();
     }
 }
