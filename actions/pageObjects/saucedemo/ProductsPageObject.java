@@ -1,12 +1,16 @@
 package pageObjects.saucedemo;
 
 import commons.BaseElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pageUIs.sauce.ProductsPageUI;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -86,4 +90,30 @@ public class ProductsPageObject extends BaseElement {
         Collections.reverse(expectProductPrice);
         return actualProductPrice.equals(expectProductPrice);
     }
+
+    public Date convertStringToDate(String dateInString){
+        dateInString = dateInString.replace(",","");
+        SimpleDateFormat formatter = new SimpleDateFormat("MMM dd yyyy");
+        Date date = null;
+        try {
+            date = formatter.parse(dateInString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+    public boolean isDataDateSortedAscending(String locator){
+        ArrayList<Date> actualList = new ArrayList<Date>();
+        List<WebElement> elementList = driver.findElements(By.xpath(locator));
+        for (WebElement element: elementList){
+            actualList.add(convertStringToDate(element.getText()));
+        }
+        ArrayList<Date> sortedList = new ArrayList<Date>();
+        for (Date child: actualList){
+            sortedList.add(child);
+        }
+        Collections.sort(sortedList);
+        return sortedList.equals(actualList);
+}
 }
