@@ -4,21 +4,12 @@ package com.nopcommerce.users;
 
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.PageGenerator;
-import pageObjects.user.HomePageObject;
-import pageObjects.user.RegisterPageObject;
-import pageObjects.user.UserLoginPageObject;
-import pageObjects.user.sidebar.CustomerInfoPageObject;
-import utilities.DataFakerConfig;
 
-import java.time.Duration;
-
-public class Level_32_Handle_Multiple_Server extends BaseTest {
+public class Level_32_Environment_01_Parameter_Name extends BaseTest {
 
     private WebDriver driver;
 

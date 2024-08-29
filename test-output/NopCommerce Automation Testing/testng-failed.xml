@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [NopCommerce Automation Testing]" guice-stage="DEVELOPMENT">
+  <parameter name="server" value="prod"/>
   <test thread-count="5" name="Run on Chrome browser(failed)">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="CHROME"/>
     <classes>
-      <class name="com.nopcommerce.users.Level_22_ConfigBrowser">
+      <class name="com.nopcommerce.users.Level_32_Environment_02_Java_Properties">
         <methods>
-          <include name="afterClass"/>
           <include name="beforeClass"/>
+          <include name="afterClass"/>
           <include name="TC_01_Register"/>
           <include name="deleteFileInReport"/>
+          <include name="TC_02_Login"/>
         </methods>
-      </class> <!-- com.nopcommerce.users.Level_22_ConfigBrowser -->
+      </class> <!-- com.nopcommerce.users.Level_32_Environment_02_Java_Properties -->
     </classes>
   </test> <!-- Run on Chrome browser(failed) -->
 </suite> <!-- Failed suite [NopCommerce Automation Testing] -->

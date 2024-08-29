@@ -219,11 +219,25 @@
 [27-08-2024 16:45:22.144 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - -----END delete file in folder----------
 [27-08-2024 16:45:29.121 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - OS name = windows 11
 [27-08-2024 16:45:29.121 INFO com.saucedemo.Level_31_Sort_ASC_DESC] - Driver instance name = chromedriver: chrome on windows (1ed7942c91d2729fdde500b3812ac3fd)
-[29-08-2024 13:43:38.488 INFO com.nopcommerce.users.Level_32_Handle_Multiple_Server] - -----START delete file in folder----------
-[29-08-2024 13:43:38.502 INFO com.nopcommerce.users.Level_32_Handle_Multiple_Server] - -----END delete file in folder----------
-[29-08-2024 13:44:32.727 INFO com.nopcommerce.users.Level_32_Handle_Multiple_Server] - OS name = windows 11
-[29-08-2024 13:44:32.728 INFO com.nopcommerce.users.Level_32_Handle_Multiple_Server] - Driver instance name = chromedriver: chrome on windows (ef74d615fb636ce6fd42b6bf19d9ab64)
-[29-08-2024 13:44:42.735 INFO com.nopcommerce.users.Level_32_Handle_Multiple_Server] - -----START delete file in folder----------
-[29-08-2024 13:44:42.738 INFO com.nopcommerce.users.Level_32_Handle_Multiple_Server] - -----END delete file in folder----------
-[29-08-2024 13:44:51.257 INFO com.nopcommerce.users.Level_32_Handle_Multiple_Server] - OS name = windows 11
-[29-08-2024 13:44:51.258 INFO com.nopcommerce.users.Level_32_Handle_Multiple_Server] - Driver instance name = chromedriver: chrome on windows (d6cf8b2727262a15f4284a74b47177f9)
+[29-08-2024 13:43:38.488 INFO com.nopcommerce.users.Level_32_Environment_01_Parameter_Name] - -----START delete file in folder----------
+[29-08-2024 13:43:38.502 INFO com.nopcommerce.users.Level_32_Environment_01_Parameter_Name] - -----END delete file in folder----------
+[29-08-2024 13:44:32.727 INFO com.nopcommerce.users.Level_32_Environment_01_Parameter_Name] - OS name = windows 11
+[29-08-2024 13:44:32.728 INFO com.nopcommerce.users.Level_32_Environment_01_Parameter_Name] - Driver instance name = chromedriver: chrome on windows (ef74d615fb636ce6fd42b6bf19d9ab64)
+[29-08-2024 13:44:42.735 INFO com.nopcommerce.users.Level_32_Environment_01_Parameter_Name] - -----START delete file in folder----------
+[29-08-2024 13:44:42.738 INFO com.nopcommerce.users.Level_32_Environment_01_Parameter_Name] - -----END delete file in folder----------
+[29-08-2024 13:44:51.257 INFO com.nopcommerce.users.Level_32_Environment_01_Parameter_Name] - OS name = windows 11
+[29-08-2024 13:44:51.258 INFO com.nopcommerce.users.Level_32_Environment_01_Parameter_Name] - Driver instance name = chromedriver: chrome on windows (d6cf8b2727262a15f4284a74b47177f9)
+[29-08-2024 17:09:00.077 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----START delete file in folder----------
+[29-08-2024 17:09:00.080 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----END delete file in folder----------
+[29-08-2024 17:11:15.755 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----START delete file in folder----------
+[29-08-2024 17:11:15.762 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----END delete file in folder----------
+[29-08-2024 17:11:36.688 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - OS name = windows 11
+[29-08-2024 17:11:36.688 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - Driver instance name = chromedriver: chrome on windows (72098dff7a56082484b109b566b433c0)
+[29-08-2024 17:11:45.675 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----START delete file in folder----------
+[29-08-2024 17:11:45.683 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----END delete file in folder----------
+[29-08-2024 17:11:51.901 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - OS name = windows 11
+[29-08-2024 17:11:51.902 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - Driver instance name = chromedriver: chrome on windows (84202b5194fd3fd94be0e47ba0e77831)
+[29-08-2024 17:12:03.479 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----START delete file in folder----------
+[29-08-2024 17:12:03.487 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----END delete file in folder----------
+[29-08-2024 17:12:30.862 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - OS name = windows 11
+[29-08-2024 17:12:30.863 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - Driver instance name = chromedriver: chrome on windows (07bd674ce488156cde28c9a3a2abdd00)
