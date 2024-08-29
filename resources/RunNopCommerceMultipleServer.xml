@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="NopCommerce Automation Testing" verbose="1">
+<parameter name="server" value="prod"></parameter>
+    <test name="Run on Chrome browser">
+        <parameter name="browser" value="CHROME"></parameter>
+        <classes>
+            <class name="com.nopcommerce.users.Level_32_Handle_Multiple_Server"/>
+        </classes>
+    </test>
+</suite>

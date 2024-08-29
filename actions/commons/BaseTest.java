@@ -62,6 +62,46 @@ public class BaseTest{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
         return driver;
     }
+    protected WebDriver getBrowserEnvironment(String browserName, String serverName){
+        BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+        switch (browserList) {
+            case FIREFOX:
+                driver = new FirefoxDriver();
+                break;
+            case CHROME:
+                driver = new ChromeDriver();
+                break;
+            case EDGE:
+                driver = new EdgeDriver();
+                break;
+            default:
+                throw new RuntimeException("Browser name is not valid");
+        }
+        driver.get(getUrlByServerName(serverName));
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
+        return driver;
+    }
+    private String getUrlByServerName (String serverName){
+        EnvironmentList environmentList = EnvironmentList.valueOf(serverName.toUpperCase());
+        switch (environmentList){
+            case DEV:
+                serverName = "https://vnexpress.net/";
+                break;
+            case TEST:
+                serverName = "https://kenh14.vn/";
+                break;
+            case STAGING:
+                serverName = "https://www.facebook.com/";
+                break;
+            case PROD:
+                serverName = "https://www.nopcommerce.com/vi";
+                break;
+            default:
+                new IllegalArgumentException("Unexpected value: " + serverName);
+        }
+        return serverName;
+    }
 
     protected WebDriver getBrowserDriver(String browserName){
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
