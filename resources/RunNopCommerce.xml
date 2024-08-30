@@ -9,7 +9,7 @@
     <test name="Run on Chrome browser">
         <parameter name="browser" value="CHROME"></parameter>
         <classes>
-            <class name="com.nopcommerce.users.Level_32_Environment_02_Java_Properties"/>
+            <class name="com.nopcommerce.users.Level_32_Environment_03_Java_Owner"/>
         </classes>
     </test>
 
