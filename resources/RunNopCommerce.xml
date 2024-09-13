@@ -13,11 +13,4 @@
         </classes>
     </test>
 
-    <!--    <test name="Run on Firefox browser">-->
-    <!--        <parameter name="browser" value="FIREFOX"></parameter>-->
-    <!--        <classes>-->
-    <!--            <class name="com.nopcommerce.users.Level_22_ConfigBrowser"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
-
 </suite>
