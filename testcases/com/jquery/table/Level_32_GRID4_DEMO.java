@@ -10,13 +10,12 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.jquery.HomePageJQueryObject;
 import pageObjects.jquery.PageGeneratorJQuery;
-import pageUIs.jquery.HomePageJQueryUI;
 
-public class Level_12_Handle_DataTable extends BaseTest {
-    @Parameters({"browser", "url"})
+public class Level_32_GRID4_DEMO extends BaseTest {
+    @Parameters({"browser", "url", "osName", "ipAddress", "port"})
     @BeforeClass
-    public void beforeClass(String browserName, String url) {
-        driver = getBrowserDriver(browserName, url);
+    public void beforeClass(String browserName, String url, String osName, String ipAddress, String portNumber) {
+        driver = getBrowserDriver(browserName, url, osName, ipAddress, portNumber);
         homePageJQuery = PageGeneratorJQuery.getHomePageJQuery(driver);
     }
 

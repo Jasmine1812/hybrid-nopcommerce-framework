@@ -241,3 +241,9 @@
 [29-08-2024 17:12:03.487 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - -----END delete file in folder----------
 [29-08-2024 17:12:30.862 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - OS name = windows 11
 [29-08-2024 17:12:30.863 INFO com.nopcommerce.users.Level_32_Environment_02_Java_Properties] - Driver instance name = chromedriver: chrome on windows (07bd674ce488156cde28c9a3a2abdd00)
+[30-08-2024 15:32:13.281 INFO com.nopcommerce.users.Level_32_Environment_03_Java_Owner] - -----START delete file in folder----------
+[30-08-2024 15:32:13.296 INFO com.nopcommerce.users.Level_32_Environment_03_Java_Owner] - -----END delete file in folder----------
+[30-08-2024 15:33:10.633 INFO com.nopcommerce.users.Level_32_Environment_03_Java_Owner] - OS name = windows 11
+[30-08-2024 15:33:10.634 INFO com.nopcommerce.users.Level_32_Environment_03_Java_Owner] - Driver instance name = chromedriver: chrome on windows (7f2060707184432a791fbb2317f37b4b)
+[13-09-2024 14:48:30.548 INFO com.jquery.table.Level_12_Handle_DataTable] - -----START delete file in folder----------
+[13-09-2024 14:48:30.551 INFO com.jquery.table.Level_12_Handle_DataTable] - -----END delete file in folder----------

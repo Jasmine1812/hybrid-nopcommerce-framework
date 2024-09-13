@@ -2,15 +2,21 @@ package commons;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxDriverService;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.GeckoDriverService;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import org.testng.Assert;
 import org.testng.ITestNGListener;
 import org.testng.ITestNGMethod;
@@ -19,6 +25,8 @@ import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
@@ -41,6 +49,7 @@ public class BaseTest{
 
     private WebDriver driver;
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
+    public Platform platform;
 
     protected WebDriver getBrowserDriver(String browserName, String url){
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -57,6 +66,49 @@ public class BaseTest{
                default:
                 throw new RuntimeException("Browser name is not valid");
         }
+        driver.get(url);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
+        return driver;
+    }
+
+    protected WebDriver getBrowserDriver(String browserName, String url, String osName, String ipAddress, String portNumber){
+        Capabilities capabilities = null;
+        if (osName.toLowerCase().contains("windows")){
+            platform = Platform.WINDOWS;
+        } else {
+            platform = Platform.MAC;
+        }
+        switch (browserName){
+            case "firefox":
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.setCapability(CapabilityType.PLATFORM_NAME, platform);
+                capabilities = firefoxOptions;
+                break;
+            case "chrome":
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setCapability(CapabilityType.PLATFORM_NAME, platform);
+                capabilities = chromeOptions;
+                break;
+            case "edge":
+                EdgeOptions edgeOptions = new EdgeOptions();
+                edgeOptions.setCapability(CapabilityType.PLATFORM_NAME, platform);
+                capabilities = edgeOptions;
+                break;
+            case "safari":
+                SafariOptions sOptions = new SafariOptions();
+                sOptions.setCapability(CapabilityType.PLATFORM_NAME, platform);
+                capabilities = sOptions;
+                break;
+            default:
+                throw new RuntimeException("Browser name is not valid");
+        }
+        try{
+            driver = new RemoteWebDriver(new URL(String.format("http://%s:%s/", ipAddress, portNumber)), capabilities);
+        } catch (MalformedURLException e){
+            e.printStackTrace();
+        }
+
         driver.get(url);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));

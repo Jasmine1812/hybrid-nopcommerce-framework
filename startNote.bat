@@ -1,0 +1,1 @@
+java -jar selenium-server-4.23.0.jar node --hub http://192.168.1.136:4444 --selenium-manager true
