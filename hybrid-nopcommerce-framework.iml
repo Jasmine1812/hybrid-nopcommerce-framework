@@ -18,5 +18,6 @@
     <orderEntry type="library" name="allure-java-commons-2.24.0" level="project" />
     <orderEntry type="library" name="datafaker-2.3.1" level="project" />
     <orderEntry type="library" name="owner-1.0.12" level="project" />
+    <orderEntry type="library" name="selenium-server-4.24.0" level="project" />
   </component>
 </module>

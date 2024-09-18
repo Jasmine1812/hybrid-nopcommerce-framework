@@ -33,11 +33,13 @@ import java.time.Duration;
 import java.util.Locale;
 import java.util.Random;
 
-public class BaseTest{
+public class BaseTest {
     protected final Logger log;
-    public BaseTest(){
+
+    public BaseTest() {
         log = LogManager.getLogger(getClass());
     }
+
     protected int generateRandomNumber() {
         Random random = new Random();
         return random.nextInt(99999);
@@ -51,7 +53,7 @@ public class BaseTest{
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
     public Platform platform;
 
-    protected WebDriver getBrowserDriver(String browserName, String url){
+    protected WebDriver getBrowserDriver(String browserName, String url) {
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
         switch (browserList) {
             case FIREFOX:
@@ -63,7 +65,7 @@ public class BaseTest{
             case EDGE:
                 driver = new EdgeDriver();
                 break;
-               default:
+            default:
                 throw new RuntimeException("Browser name is not valid");
         }
         driver.get(url);
@@ -72,14 +74,15 @@ public class BaseTest{
         return driver;
     }
 
-    protected WebDriver getBrowserDriver(String browserName, String url, String osName, String ipAddress, String portNumber){
+    // Selenium Grid
+    protected WebDriver getBrowserDriver(String browserName, String url, String osName, String ipAddress, String portNumber) {
         Capabilities capabilities = null;
-        if (osName.toLowerCase().contains("windows")){
+        if (osName.toLowerCase().contains("windows")) {
             platform = Platform.WINDOWS;
         } else {
             platform = Platform.MAC;
         }
-        switch (browserName){
+        switch (browserName) {
             case "firefox":
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.setCapability(CapabilityType.PLATFORM_NAME, platform);
@@ -103,9 +106,9 @@ public class BaseTest{
             default:
                 throw new RuntimeException("Browser name is not valid");
         }
-        try{
+        try {
             driver = new RemoteWebDriver(new URL(String.format("http://%s:%s/", ipAddress, portNumber)), capabilities);
-        } catch (MalformedURLException e){
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
@@ -114,7 +117,8 @@ public class BaseTest{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
         return driver;
     }
-    protected WebDriver getBrowserEnvironment(String browserName, String serverName){
+
+    protected WebDriver getBrowserEnvironment(String browserName, String serverName) {
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
         switch (browserList) {
             case FIREFOX:
@@ -134,9 +138,10 @@ public class BaseTest{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
         return driver;
     }
-    private String getUrlByServerName (String serverName){
+
+    private String getUrlByServerName(String serverName) {
         EnvironmentList environmentList = EnvironmentList.valueOf(serverName.toUpperCase());
-        switch (environmentList){
+        switch (environmentList) {
             case DEV:
                 serverName = "https://vnexpress.net/";
                 break;
@@ -155,7 +160,7 @@ public class BaseTest{
         return serverName;
     }
 
-    protected WebDriver getBrowserDriver(String browserName){
+    protected WebDriver getBrowserDriver(String browserName) {
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
         switch (browserList) {
             case FIREFOX:
@@ -224,6 +229,7 @@ public class BaseTest{
         }
         return pass;
     }
+
     @BeforeSuite
     public void deleteFileInReport() {
         // Remove all file in ReportNG screenshot (image)
