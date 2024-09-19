@@ -15,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriverService;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.Assert;
@@ -75,7 +76,7 @@ public class BaseTest {
     }
 
     // Selenium Grid
-    protected WebDriver getBrowserDriver(String browserName, String url, String osName, String ipAddress, String portNumber) {
+    protected WebDriver getBrowserDriver(String browserName, String osName, String ipAddress, String portNumber) {
         Capabilities capabilities = null;
         if (osName.toLowerCase().contains("windows")) {
             platform = Platform.WINDOWS;
@@ -108,6 +109,28 @@ public class BaseTest {
         }
         try {
             driver = new RemoteWebDriver(new URL(String.format("http://%s:%s/", ipAddress, portNumber)), capabilities);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        driver.get("https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
+        return driver;
+    }
+
+    //Selenium Cloud
+    protected WebDriver getBrowserDriver(String url, String osName, String osVersion, String browserName, String browserVersion) {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("osName", osName);
+        capabilities.setCapability("osVersion", osVersion);
+        capabilities.setCapability("browser", browserName);
+        capabilities.setCapability("browserVersion", browserVersion);
+        capabilities.setCapability("browserstack.debug", "true");
+        capabilities.setCapability("resolution", "1920x1080");
+        capabilities.setCapability("name", "Run on" + osName + "and" + browserName + "with version" + browserVersion);
+        try {
+            driver = new RemoteWebDriver(new URL(GlobalConstants.BROWSER_STACK_URL), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

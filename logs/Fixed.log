@@ -247,3 +247,11 @@
 [30-08-2024 15:33:10.634 INFO com.nopcommerce.users.Level_32_Environment_03_Java_Owner] - Driver instance name = chromedriver: chrome on windows (7f2060707184432a791fbb2317f37b4b)
 [13-09-2024 14:48:30.548 INFO com.jquery.table.Level_12_Handle_DataTable] - -----START delete file in folder----------
 [13-09-2024 14:48:30.551 INFO com.jquery.table.Level_12_Handle_DataTable] - -----END delete file in folder----------
+[15-09-2024 22:25:10.567 INFO com.jquery.table.Level_32_GRID4_DEMO] - -----START delete file in folder----------
+[15-09-2024 22:25:10.579 INFO com.jquery.table.Level_32_GRID4_DEMO] - -----END delete file in folder----------
+[15-09-2024 22:30:08.303 INFO com.jquery.table.Level_32_GRID4_DEMO] - -----START delete file in folder----------
+[15-09-2024 22:30:08.313 INFO com.jquery.table.Level_32_GRID4_DEMO] - -----END delete file in folder----------
+[19-09-2024 23:22:31.496 INFO com.jquery.table.Level_33_CLOUD_BROWSERSTACK] - -----START delete file in folder----------
+[19-09-2024 23:22:31.509 INFO com.jquery.table.Level_33_CLOUD_BROWSERSTACK] - -----END delete file in folder----------
+[19-09-2024 23:24:38.460 INFO com.jquery.table.Level_33_CLOUD_BROWSERSTACK] - -----START delete file in folder----------
+[19-09-2024 23:24:38.468 INFO com.jquery.table.Level_33_CLOUD_BROWSERSTACK] - -----END delete file in folder----------

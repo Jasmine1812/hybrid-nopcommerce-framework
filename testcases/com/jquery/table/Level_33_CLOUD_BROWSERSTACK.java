@@ -11,11 +11,11 @@ import org.testng.annotations.Test;
 import pageObjects.jquery.HomePageJQueryObject;
 import pageObjects.jquery.PageGeneratorJQuery;
 
-public class Level_32_GRID4_DEMO extends BaseTest {
-    @Parameters({"browser", "osName", "ipAddress", "port"})
+public class Level_33_CLOUD_BROWSERSTACK extends BaseTest {
+    @Parameters({"url", "osName", "osVersion", "browser", "browserVersion"})
     @BeforeClass
-    public void beforeClass(String browserName, String osName, String ipAddress, String portNumber) {
-        driver = getBrowserDriver(browserName, osName, ipAddress, portNumber);
+    public void beforeClass(String url, String osName, String osVersion, String browserName, String browserVersion) {
+        driver = getBrowserDriver(url, osName, osVersion, browserName, browserVersion);
         homePageJQuery = PageGeneratorJQuery.getHomePageJQuery(driver);
     }
 

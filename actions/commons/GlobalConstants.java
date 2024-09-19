@@ -18,4 +18,8 @@ public class GlobalConstants {
     public static final String BROWSER_EXTENSION = RELATIVE_PROJECT_PATH + File.separator + "browserExtensions" + File.separator;
     public static final String BROWSER_LOG = RELATIVE_PROJECT_PATH + File.separator + "browserLogs" + File.separator;
     public static final String ENVIRONMENT_CONFIG_PATH = RELATIVE_PROJECT_PATH + File.separator + "environmentConfig" + File.separator;
+    public static final String BROWSER_USERNAME = "jasminenguyen_2Aabt7";
+    public static final String BROWSER_AUTOMATE_KEY = "T5TLiAtPUTHWfwh3PSJa";
+    public static final String BROWSER_STACK_URL = "https://" + BROWSER_USERNAME+ ":" + BROWSER_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+
 }
