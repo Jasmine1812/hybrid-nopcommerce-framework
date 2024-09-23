@@ -3,24 +3,20 @@ package commons;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxDriverService;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.Assert;
-import org.testng.ITestNGListener;
-import org.testng.ITestNGMethod;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
 
@@ -28,10 +24,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.Duration;
-import java.util.Locale;
+import java.util.HashMap;
 import java.util.Random;
 
 public class BaseTest {
@@ -119,16 +113,21 @@ public class BaseTest {
         return driver;
     }
 
-    //Selenium Cloud
-    protected WebDriver getBrowserDriver(String url, String osName, String osVersion, String browserName, String browserVersion) {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("osName", osName);
-        capabilities.setCapability("osVersion", osVersion);
+    //BrowserStack
+    protected WebDriver getBrowserDriverBrowserStack(String url, String osName, String osVersion, String browserName, String browserVersion) {
+        MutableCapabilities capabilities = new MutableCapabilities();
+        HashMap<String, Object> bstackOptions = new HashMap<String, Object>();
+
         capabilities.setCapability("browser", browserName);
-        capabilities.setCapability("browserVersion", browserVersion);
-        capabilities.setCapability("browserstack.debug", "true");
-        capabilities.setCapability("resolution", "1920x1080");
-        capabilities.setCapability("name", "Run on" + osName + "and" + browserName + "with version" + browserVersion);
+        bstackOptions.put("osName", osName);
+        bstackOptions.put("osVersion", osVersion);
+        bstackOptions.put("browserVersion", browserVersion);
+        bstackOptions.put("projectName", "Jasmine Project");
+        bstackOptions.put("buildName", "Jasmine Nguyen");
+        bstackOptions.put("userName", "jasminenguyen_2Aabt7");
+        bstackOptions.put("accessKey", "T5TLiAtPUTHWfwh3PSJa");
+        bstackOptions.put("consoleLogs", "info");
+        capabilities.setCapability("bstack:options", bstackOptions);
         try {
             driver = new RemoteWebDriver(new URL(GlobalConstants.BROWSER_STACK_URL), capabilities);
         } catch (MalformedURLException e) {
@@ -138,6 +137,59 @@ public class BaseTest {
         driver.get(url);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
+        return driver;
+    }
+
+    //SauceLab
+    protected WebDriver getBrowserDriverSaucelab(String url, String osName, String browserName, String browserVersion) {
+        MutableCapabilities capability = null;
+
+        switch (browserName) {
+            case "firefox":
+                FirefoxOptions fOptions = new FirefoxOptions();
+                fOptions.setPlatformName(osName);
+                fOptions.setBrowserVersion(browserVersion);
+                capability = fOptions;
+                break;
+            case "chrome":
+                ChromeOptions cOptions = new ChromeOptions();
+                cOptions.setPlatformName(osName);
+                cOptions.setBrowserVersion(browserVersion);
+                capability = cOptions;
+                break;
+            case "edge":
+                EdgeOptions eOptions = new EdgeOptions();
+                eOptions.setPlatformName(osName);
+                eOptions.setBrowserVersion(browserVersion);
+                capability = eOptions;
+                break;
+            case "safari":
+                SafariOptions sOptions = new SafariOptions();
+                sOptions.setPlatformName(osName);
+                sOptions.setBrowserVersion(browserVersion);
+                capability = sOptions;
+                break;
+            default:
+                throw new RuntimeException("Browser is not valid!");
+        }
+
+        HashMap<String, String> sauceOptions = new HashMap<String, String>();
+        sauceOptions.put("username", GlobalConstants.SAUCE_USERNAME);
+        sauceOptions.put("accessKey", GlobalConstants.SAUCE_AUTOMATE_KEY);
+        sauceOptions.put("build", "JasmineProject");
+        sauceOptions.put("name", "Run on " + osName + " | " + browserName + " | " + browserVersion);
+
+        capability.setCapability("sauce:options", sauceOptions);
+
+        try {
+            driver = new RemoteWebDriver(new URL(GlobalConstants.SAUCE_URL), capability);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
+        driver.manage().window().maximize();
+        driver.get(url);
         return driver;
     }
 
