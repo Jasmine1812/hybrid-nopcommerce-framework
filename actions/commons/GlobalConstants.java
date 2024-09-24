@@ -25,4 +25,6 @@ public class GlobalConstants {
     public static final String SAUCE_USERNAME = "oauth-jamesnguyen0102-a3470";
     public static final String SAUCE_AUTOMATE_KEY = "b01f2499-70ba-469e-9875-62932e9b463a";
     public static final String SAUCE_URL = "https://ondemand.eu-central-1.saucelabs.com:443/wd/hub";
+    public static final String BITBAR_AUTOMATE_KEY = "CHbYi4A0arCcacd2qgey0ZDti0isAfQn";
+    public static final String BITBAR_URL = "https://eu-desktop-hub.bitbar.com/wd/hub";
 }

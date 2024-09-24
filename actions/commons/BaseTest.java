@@ -124,8 +124,8 @@ public class BaseTest {
         bstackOptions.put("browserVersion", browserVersion);
         bstackOptions.put("projectName", "Jasmine Project");
         bstackOptions.put("buildName", "Jasmine Nguyen");
-        bstackOptions.put("userName", "jasminenguyen_2Aabt7");
-        bstackOptions.put("accessKey", "T5TLiAtPUTHWfwh3PSJa");
+//        bstackOptions.put("userName", "jasminenguyen_2Aabt7");
+//        bstackOptions.put("accessKey", "T5TLiAtPUTHWfwh3PSJa");
         bstackOptions.put("consoleLogs", "info");
         capabilities.setCapability("bstack:options", bstackOptions);
         try {
@@ -183,6 +183,41 @@ public class BaseTest {
 
         try {
             driver = new RemoteWebDriver(new URL(GlobalConstants.SAUCE_URL), capability);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
+        driver.manage().window().maximize();
+        driver.get(url);
+        return driver;
+    }
+
+    //BitBar
+    protected WebDriver getBrowserDriverBitbar(String url, String osName, String osVersion, String browserName, String browserVersion) {
+        MutableCapabilities capabilities = new MutableCapabilities();
+        capabilities.setCapability("platformName", osName);
+        capabilities.setCapability("browserName", browserName);
+        capabilities.setCapability("browserVersion", browserVersion);
+
+        HashMap<String, String> bitbarOptions = new HashMap<String, String>();
+        bitbarOptions.put("project", "NopCommerce");
+        bitbarOptions.put("testrun", "Run on " + osName + " | " + osVersion + " | " + browserName + " | " + browserVersion);
+        bitbarOptions.put("apiKey", GlobalConstants.BITBAR_AUTOMATE_KEY);
+        bitbarOptions.put("osVersion", osVersion);
+
+        if (osName.contains("Windows") || osName.contains("Linux")) {
+            bitbarOptions.put("resolution", "1920x1080");
+        } else {
+            bitbarOptions.put("resolution", "1920x1200");
+        }
+
+        bitbarOptions.put("seleniumVersion", "4");
+
+        capabilities.setCapability("bitbar:options", bitbarOptions);
+
+        try {
+            driver = new RemoteWebDriver(new URL(GlobalConstants.BITBAR_URL), capabilities);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

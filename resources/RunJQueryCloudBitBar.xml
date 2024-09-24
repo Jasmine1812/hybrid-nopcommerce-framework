@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Data Table - Data Cloud" verbose="1">
+    <parameter name="url" value="https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/"></parameter>
+
+    <test name="Run on Windows 10 Chrome browser">
+        <parameter name="osName" value="Windows"></parameter>
+        <parameter name="osVersion" value="10"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browserVersion" value="128"></parameter>
+        <classes>
+            <class name="com.jquery.table.Level_35_CLOUD_BitBar"/>
+        </classes>
+    </test>
+
+<!--    <test name="Run on Window 11 Firefox browser">-->
+<!--        <parameter name="osName" value="Windows"></parameter>-->
+<!--        <parameter name="osVersion" value="11"></parameter>-->
+<!--        <parameter name="browser" value="firefox"></parameter>-->
+<!--        <parameter name="browserVersion" value="130"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.jquery.table.Level_35_CLOUD_BitBar"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <!--    <test name="Run on Edge browser">-->
+    <!--        <parameter name="browser" value="edge"></parameter>-->
+    <!--        <parameter name="osName" value="windows"></parameter>-->
+    <!--        <parameter name="osVersion" value="10"></parameter>-->
+    <!--        <parameter name="browserVersion" value="latest"></parameter>-->
+    <!--        <classes>-->
+    <!--            <class name="com.jquery.table.Level_33_CLOUD_BROWSERSTACK"/>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+</suite>
