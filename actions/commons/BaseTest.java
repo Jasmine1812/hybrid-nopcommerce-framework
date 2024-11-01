@@ -1,5 +1,6 @@
 package commons;
 
+import commons.environmentConfig.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Capabilities;
@@ -13,7 +14,6 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import org.testng.Assert;
@@ -47,6 +47,34 @@ public class BaseTest {
     private WebDriver driver;
     private long longTimeout = GlobalConstants.LONG_TIMEOUT;
     public Platform platform;
+
+    //getBrowserDriverAllEnvironment
+    protected WebDriver getBrowserDriverAllEnvironment(String browserName, String serverName, String envName, String osName, String osVersion, String browserVersion, String portNumber) {
+        EnvironmentList environmentList = EnvironmentList.valueOf(envName.toUpperCase());
+        switch (envName) {
+            case "local":
+                driver = new LocalFactory(browserName).createDriver(browserName);
+                break;
+            case "grid":
+                driver = new GridFactory(browserName, osName, osVersion, portNumber).createDriver(browserName, osName, osVersion, portNumber);
+                break;
+            case "browserstack":
+                driver = new BrowserStackFactory(osName, osVersion, browserName, browserVersion).createDriver(osName, osVersion, browserName, browserVersion);
+                break;
+            case "saucelab":
+                driver = new SauceLabFactory(osName, browserName, browserVersion).createDriver(osName, browserName, browserVersion);
+                break;
+            case "bitbar":
+                driver = new BitBarFactory(osName, osVersion, browserName, browserVersion).createDriver(osName, osVersion, browserName, browserVersion);
+                break;
+            default:
+                driver = getBrowserEnvironment(browserName, serverName);
+        }
+        driver.get(getUrlByServerName(serverName));
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(longTimeout));
+        return driver;
+    }
 
     protected WebDriver getBrowserDriver(String browserName, String url) {
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -250,10 +278,10 @@ public class BaseTest {
     }
 
     private String getUrlByServerName(String serverName) {
-        EnvironmentList environmentList = EnvironmentList.valueOf(serverName.toUpperCase());
+        ServerList environmentList = ServerList.valueOf(serverName.toUpperCase());
         switch (environmentList) {
             case DEV:
-                serverName = "https://vnexpress.net/";
+                serverName = "https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/";
                 break;
             case TEST:
                 serverName = "https://kenh14.vn/";

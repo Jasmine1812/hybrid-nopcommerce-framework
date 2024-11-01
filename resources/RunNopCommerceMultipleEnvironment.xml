@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Jquery Automation Testing" verbose="1">
+<parameter name="server" value="dev"></parameter>
+    <test name="Run on Chrome browser">
+        <parameter name="browser" value="CHROME"></parameter>
+        <classes>
+            <class name="com.jquery.table.Level_36_ALL_ENVIRONMENT"/>
+        </classes>
+    </test>
+</suite>
