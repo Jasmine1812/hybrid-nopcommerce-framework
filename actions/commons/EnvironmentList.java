@@ -1,5 +1,5 @@
 package commons;
 
 public enum EnvironmentList {
-    LOCAL, SAUCE_LAB, BROWSER_STACK, GRID, BIT_BAR;
+    LOCAL, SAUCELAB, BROWSERSTACK, GRID, BITBAR, LAMBDA;
 }

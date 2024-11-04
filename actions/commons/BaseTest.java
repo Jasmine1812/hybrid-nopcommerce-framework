@@ -67,8 +67,12 @@ public class BaseTest {
             case "bitbar":
                 driver = new BitBarFactory(osName, osVersion, browserName, browserVersion).createDriver(osName, osVersion, browserName, browserVersion);
                 break;
+            case "lambda":
+                driver = new LambdaFactory(osName, browserName, browserVersion).createDriver(osName, browserName, browserVersion);
+                break;
             default:
                 driver = getBrowserEnvironment(browserName, serverName);
+                break;
         }
         driver.get(getUrlByServerName(serverName));
         driver.manage().window().maximize();

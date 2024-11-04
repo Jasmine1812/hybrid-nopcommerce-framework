@@ -18,8 +18,8 @@ public class GlobalConstants {
     public static final String BROWSER_EXTENSION = RELATIVE_PROJECT_PATH + File.separator + "browserExtensions" + File.separator;
     public static final String BROWSER_LOG = RELATIVE_PROJECT_PATH + File.separator + "browserLogs" + File.separator;
     public static final String ENVIRONMENT_CONFIG_PATH = RELATIVE_PROJECT_PATH + File.separator + "environmentConfig" + File.separator;
-    public static final String BROWSER_USERNAME = "jasminenguyen_2Aabt7";
-    public static final String BROWSER_AUTOMATE_KEY = "T5TLiAtPUTHWfwh3PSJa";
+    public static final String BROWSER_USERNAME = "trngbia_5fOp8R";
+    public static final String BROWSER_AUTOMATE_KEY = "qRMRAqkLcz6jwH8p3jVe";
     public static final String BROWSER_STACK_URL = "https://" + BROWSER_USERNAME + ":" + BROWSER_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
     public static final String SAUCE_USERNAME = "oauth-jamesnguyen0102-a3470";
@@ -27,4 +27,7 @@ public class GlobalConstants {
     public static final String SAUCE_URL = "https://ondemand.eu-central-1.saucelabs.com:443/wd/hub";
     public static final String BITBAR_AUTOMATE_KEY = "CHbYi4A0arCcacd2qgey0ZDti0isAfQn";
     public static final String BITBAR_URL = "https://eu-desktop-hub.bitbar.com/wd/hub";
+    public static final Object LAMBDA_USERNAME = "jamesnguyen0103";
+    public static final Object LAMBDA_AUTOMATE_KEY = "y2oeBKgYN9uzITB5hWq5ATo5AzYZf8nbAh8x5et299uSNHHjZs";
+    public static final String LAMBDA_URL = "https://hub.lambdatest.com/wd/hub";
 }

@@ -2,10 +2,38 @@
 
 <suite name="Jquery Automation Testing" verbose="1">
 <parameter name="server" value="dev"></parameter>
-    <test name="Run on Chrome browser">
-        <parameter name="browser" value="CHROME"></parameter>
+<!--    local-->
+<!--    <test name="Run on Chrome browser">-->
+<!--        <parameter name="browser" value="CHROME"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.jquery.table.Level_36_ALL_ENVIRONMENT"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    BROWSERSTACK-->
+<!--    <test name="Run on Chrome browser">-->
+<!--        <parameter name="envName" value="browserstack"></parameter>-->
+<!--        <parameter name="browser" value="chrome"></parameter>-->
+<!--        <parameter name="browser" value="chrome"></parameter>-->
+<!--        <parameter name="osName" value="windows"></parameter>-->
+<!--        <parameter name="osVersion" value="11"></parameter>-->
+<!--        <parameter name="browserVersion" value="latest"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="com.jquery.table.Level_36_ALL_ENVIRONMENT"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    LAMBDA-->
+
+    <test name="Run on Window 11 - Chrome browser">
+        <parameter name="envName" value="lambda"></parameter>
+        <parameter name="osName" value="Windows 11"></parameter>
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browserVersion" value="latest"></parameter>
         <classes>
             <class name="com.jquery.table.Level_36_ALL_ENVIRONMENT"/>
         </classes>
     </test>
+
+
 </suite>
